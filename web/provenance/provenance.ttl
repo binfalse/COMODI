@@ -1,0 +1,15 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<http://comodi.sems.uni-rostock.de/?v=22.09.2013> a prov:Entity;
+	 dc:title "COMODI -- Computational models differ";
+	 prov:wasAttributedTo <orcid>;
+	 dc:creator <orcid>;
+	 prov:wasAttributedTo <orcid>;
+	 dc:creator <orcid>;
+	 prov:wasAttributedTo <orcid>;
+	 dc:contributor <orcid>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://comodi.sems.uni-rostock.de/>;
+	 prov:wasRevisionOf <http://comodi.sems.uni-rostock.de/?v=01.09.2015>;
+	 prov:wasGeneratedAt "22.09.2013".
