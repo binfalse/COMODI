@@ -1,0 +1,15 @@
+digraph intro {
+edge [len=2,fontcolor="#005A9C",fontname = "FreeMono"];
+node [color="#005A9C",fontname = "DejaVu Sans Mono bold", style="bold"]
+
+change [color="#000000", style="filled,bold", fillcolor="#005A9C", fontcolor="#ffffff", label="Change"];
+
+
+change -> "Target" [label="affected"];
+change -> "Reason" [label="hadReason"];
+change -> "Intention" [label="intended"];
+change -> "Type" [label="changeTyp"];
+change -> "Entity" [label="actedOn"];
+
+}
+

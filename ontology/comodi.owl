@@ -30,19 +30,21 @@
     
 
 
+    <!-- http://purl.org/net/comodi#actedOn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#actedOn">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/net/comodi#affected -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#affected">
         <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Target"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/net/comodi#Entity"/>
-                    <rdf:Description rdf:about="http://purl.org/net/comodi#Target"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -165,38 +167,7 @@
 
     <!-- http://purl.org/net/comodi#Change -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#Change">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/comodi#hadReason"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/net/comodi#Reason"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/comodi#intended"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/net/comodi#Intention"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/comodi#affected"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/net/comodi#Target"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/comodi#affected"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/net/comodi#Entity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/net/comodi#changeType"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/net/comodi#Type"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.org/net/comodi#Change"/>
     
 
 
