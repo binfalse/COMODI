@@ -157,9 +157,9 @@
     
 
 
-    <!-- http://purl.org/net/comodi#CellMLSpecification -->
+    <!-- http://purl.org/net/comodi#CellmlSpecification -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#CellMLSpecification">
+    <owl:Class rdf:about="http://purl.org/net/comodi#CellmlSpecification">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Specification"/>
     </owl:Class>
     
@@ -496,26 +496,26 @@
     
 
 
-    <!-- http://purl.org/net/comodi#SBLMSpecification -->
+    <!-- http://purl.org/net/comodi#SbmlLevel -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#SBLMSpecification">
+    <owl:Class rdf:about="http://purl.org/net/comodi#SbmlLevel">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SbmlSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#SbmlSpecification -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#SbmlSpecification">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Specification"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/net/comodi#SBMLLevel -->
+    <!-- http://purl.org/net/comodi#SbmlVersion -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#SBMLLevel">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SBLMSpecification"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/net/comodi#SBMLVersion -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#SBMLVersion">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SBLMSpecification"/>
+    <owl:Class rdf:about="http://purl.org/net/comodi#SbmlVersion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SbmlSpecification"/>
     </owl:Class>
     
 
