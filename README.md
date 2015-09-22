@@ -1,2 +1,5 @@
-# comodi
-ontology because COmputational MOdels DIffer
+# COMODI
+
+An ontology because **CO**mputational **MO**dels **DI**ffer
+
+
