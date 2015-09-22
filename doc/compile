@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+for i in *dot
+do
+	target=${i/dot/svg}
+	if [ "$i" = "intro.dot" ]
+	then
+		neato -Tsvg "$i" > "$target"
+	else
+		dot -Tsvg "$i" > "$target"
+	fi
+done
+
+
