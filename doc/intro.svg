@@ -56,7 +56,7 @@
 <g id="edge4" class="edge"><title>change&#45;&gt;Type</title>
 <path fill="none" stroke="black" d="M31.1894,-12.0229C55.5529,-21.4873 89.2057,-34.5603 114.636,-44.4392"/>
 <polygon fill="black" stroke="black" points="113.699,-47.8299 124.288,-48.1885 116.234,-41.3049 113.699,-47.8299"/>
-<text text-anchor="middle" x="35.4128" y="-32.0311" font-family="DejaVu Sans Mono bold" font-size="14.00" fill="#005a9c">changeTyp</text>
+<text text-anchor="middle" x="31.4128" y="-32.0311" font-family="DejaVu Sans Mono bold" font-size="14.00" fill="#005a9c">changeType</text>
 </g>
 <!-- Entity -->
 <g id="node6" class="node"><title>Entity</title>
@@ -67,7 +67,7 @@
 <g id="edge5" class="edge"><title>change&#45;&gt;Entity</title>
 <path fill="none" stroke="black" d="M-1.43504,-17.985C-2.75433,-46.1117 -5.29101,-100.193 -6.85234,-133.479"/>
 <polygon fill="black" stroke="black" points="-10.3497,-133.344 -7.32221,-143.497 -3.35742,-133.672 -10.3497,-133.344"/>
-<text text-anchor="middle" x="-33.1437" y="-79.5323" font-family="DejaVu Sans Mono bold" font-size="14.00" fill="#005a9c">actedOn</text>
+<text text-anchor="middle" x="-41.6437" y="-79.5323" font-family="DejaVu Sans Mono bold" font-size="14.00" fill="#005a9c">appliedTo</text>
 </g>
 </g>
 </svg>

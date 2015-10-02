@@ -8,8 +8,8 @@ change [color="#000000", style="filled,bold", fillcolor="#005A9C", fontcolor="#f
 change -> "Target" [label="affected"];
 change -> "Reason" [label="hadReason"];
 change -> "Intention" [label="intended"];
-change -> "Type" [label="changeTyp"];
-change -> "Entity" [label="actedOn"];
+change -> "Type" [label="changeType"];
+change -> "Entity" [label="appliedTo"];
 
 }
 
