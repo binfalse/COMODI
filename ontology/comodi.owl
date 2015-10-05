@@ -30,21 +30,21 @@
     
 
 
-    <!-- http://purl.org/net/comodi#actedOn -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#actedOn">
-        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
-        <rdfs:range rdf:resource="http://purl.org/net/comodi#Entity"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/net/comodi#affected -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#affected">
         <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
         <rdfs:range rdf:resource="http://purl.org/net/comodi#Target"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#appliedTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#appliedTo">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Entity"/>
     </owl:ObjectProperty>
     
 
@@ -74,6 +74,16 @@
     <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#intended">
         <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
         <rdfs:range rdf:resource="http://purl.org/net/comodi#Intention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#triggered -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#triggered">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
     </owl:ObjectProperty>
     
 
@@ -116,9 +126,9 @@
     
 
 
-    <!-- http://purl.org/net/comodi#AnnotationDescription -->
+    <!-- http://purl.org/net/comodi#Annotation -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#AnnotationDescription">
+    <owl:Class rdf:about="http://purl.org/net/comodi#Annotation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
         <rdfs:comment>&quot;Difference between two versions of a model that change the annotations,including RDF blocks,dc:terms and other.&quot;</rdfs:comment>
     </owl:Class>
@@ -128,7 +138,7 @@
     <!-- http://purl.org/net/comodi#AnnotationScheme -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#AnnotationScheme">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#FormatRelatedChange"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
     </owl:Class>
     
 
@@ -222,7 +232,7 @@
     <!-- http://purl.org/net/comodi#Date -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Date">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#AnnotationDescription"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
     </owl:Class>
     
 
@@ -293,14 +303,6 @@
     
 
 
-    <!-- http://purl.org/net/comodi#FormatRelatedChange -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#FormatRelatedChange">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/net/comodi#FunctionDefinition -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#FunctionDefinition">
@@ -312,7 +314,7 @@
     <!-- http://purl.org/net/comodi#IdentifiersScheme -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#IdentifiersScheme">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#FormatRelatedChange"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
         <rdfs:comment>&quot;If the underlying URI scheme changes,e.g.from MARIAM identifiers to identifiers.org&quot;</rdfs:comment>
     </owl:Class>
     
@@ -359,7 +361,7 @@
     <!-- http://purl.org/net/comodi#MetaIdentifier -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#MetaIdentifier">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#FormatRelatedChange"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
     </owl:Class>
     
 
@@ -431,7 +433,7 @@
     <!-- http://purl.org/net/comodi#OntologyLink -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#OntologyLink">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#AnnotationDescription"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
     </owl:Class>
     
 
@@ -449,7 +451,7 @@
     <!-- http://purl.org/net/comodi#PermutationOfEntities -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#PermutationOfEntities">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Move"/>
         <rdfs:comment>&quot;If the order of entities below XML nodes has changed ,e.g. SBML listOfspecies or SBML listOfReaction.All nodes need to have the same parent/must be siblings&quot;</rdfs:comment>
     </owl:Class>
     
@@ -458,7 +460,7 @@
     <!-- http://purl.org/net/comodi#Person -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Person">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#AnnotationDescription"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
     </owl:Class>
     
 
@@ -478,6 +480,14 @@
     <owl:Class rdf:about="http://purl.org/net/comodi#ReactionNetwork">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Network"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#ReactionNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ReactionReversibility -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ReactionReversibility">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#ReactionDefinition"/>
     </owl:Class>
     
 
@@ -520,14 +530,6 @@
     
 
 
-    <!-- http://purl.org/net/comodi#ShiftingOfEntities -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#ShiftingOfEntities">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/net/comodi#Simplification -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Simplification">
@@ -549,7 +551,7 @@
     <!-- http://purl.org/net/comodi#Specification -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Specification">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#FormatRelatedChange"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
     </owl:Class>
     
 
@@ -571,7 +573,7 @@
     <!-- http://purl.org/net/comodi#TextualDescription -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#TextualDescription">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#AnnotationDescription"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
         <rdfs:comment>&quot;The Definition of textual description should contain:
     - that it is a human-readable description.
     - plus some layout information for this description&quot;</rdfs:comment>
@@ -628,7 +630,7 @@
     <!-- http://purl.org/net/comodi#VcardScheme -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#VcardScheme">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#FormatRelatedChange"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
     </owl:Class>
     
 
