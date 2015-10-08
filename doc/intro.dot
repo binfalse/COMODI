@@ -10,6 +10,7 @@ change -> "Reason" [label="hadReason"];
 change -> "Intention" [label="intended"];
 change -> "Type" [label="changeType"];
 change -> "Entity" [label="appliedTo"];
+change -> change [label="wasTriggeredBy"];
 
 }
 

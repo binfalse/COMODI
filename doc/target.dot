@@ -1,5 +1,5 @@
 digraph intro {
-rankdir=BT;
+rankdir=RL;
 edge [len=2];
 node [color="#005A9C",fontname = "DejaVu Sans Mono bold", style="bold"];
 
@@ -7,18 +7,18 @@ top [color="#000000", style="filled,bold", fillcolor="#005A9C", fontcolor="#ffff
 
 
 
-"AnnotationDescription" -> top;
+"Annotation" -> top;
 
 "CreationDate" -> "Date" ;
 "ModificationDate" -> "Date" ;
-"Date" -> "AnnotationDescription";
+"Date" -> "Annotation";
 
-"OntologyLink" -> "AnnotationDescription";
-"TextualDescription" -> "AnnotationDescription";
+"OntologyLink" -> "Annotation";
+"TextualDescription" -> "Annotation";
 
 
 
-"Person" -> "AnnotationDescription";
+"Person" -> "Annotation";
 "Contributor" -> "Person";
 "Creator" -> "Contributor";
 "Attribution" -> "TextualDescription";
@@ -26,18 +26,15 @@ top [color="#000000", style="filled,bold", fillcolor="#005A9C", fontcolor="#ffff
 
 
 "DocumentLayout" -> top;
-"FormatRelatedChange" -> "DocumentLayout";
-"PermutationOfEntities" -> "DocumentLayout";
-"ShiftingOfEntities" -> "DocumentLayout";
-"AnnotationScheme" -> "FormatRelatedChange";
-"IdentifiersScheme" -> "FormatRelatedChange";
-"MetaIdentifier" -> "FormatRelatedChange";
-"Specification" -> "FormatRelatedChange";
+"AnnotationScheme" -> "DocumentLayout";
+"IdentifiersScheme" -> "DocumentLayout";
+"MetaIdentifier" -> "DocumentLayout";
+"Specification" -> "DocumentLayout";
 "CellMLSpecification" -> "Specification";
 "SbmlSpecification" -> "Specification";
 "SbmlLevel" -> "SbmlSpecification";
 "SbmlVersion" -> "SbmlSpecification";
-"VcardScheme" -> "FormatRelatedChange";
+"VcardScheme" -> "DocumentLayout";
 
 
 
@@ -56,7 +53,7 @@ top [color="#000000", style="filled,bold", fillcolor="#005A9C", fontcolor="#ffff
 "ComponentHierarchy" -> "Network";
 "ReactionNetwork" -> "Network";
 "VariableConnections" -> "Network";
-"ReactionDefinition" -> "ReactionNetwork";
+"ReactionReversibility" -> "ReactionDefinition" -> "ReactionNetwork";
 
 
 
