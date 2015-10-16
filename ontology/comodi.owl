@@ -671,7 +671,9 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <!-- http://purl.org/net/comodi#XmlEntity -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#XmlEntity"/>
+    <owl:Class rdf:about="http://purl.org/net/comodi#XmlEntity">
+        <rdfs:comment>An XML entity is part of the instance of an XML-encoded model.</rdfs:comment>
+    </owl:Class>
     
 
 
