@@ -140,6 +140,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#AnnotationScheme">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The annotation scheme encodes the structure of semantic annotations attached to the model or to the model entities.</rdfs:comment>
     </owl:Class>
     
 
@@ -172,6 +173,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#CellmlSpecification">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Specification"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The CellML Specification describes the schema of CellML files.</rdfs:comment>
     </owl:Class>
     
 
@@ -204,6 +206,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Contributor">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Person"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A contributor participates in the development of the model.</rdfs:comment>
     </owl:Class>
     
 
@@ -231,6 +234,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Creator">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Contributor"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A creator is the person who developed the model or its representaiton.</rdfs:comment>
     </owl:Class>
     
 
@@ -256,6 +260,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#DocumentLayout">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The document layout encodes the structure of the model encoding.</rdfs:comment>
         <rdfs:comment>&quot;Differences between two versions of a model that relate to the structure of the XML/RDF encoding.&quot;</rdfs:comment>
     </owl:Class>
     
@@ -316,6 +321,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#IdentifiersScheme">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The identifier scheme encodes the structure of identifiers which link the model or its entities to terms in external resources. External resources are mainly bio-ontologies.
+One example for an identifiers scheme is identifiers.org.</rdfs:comment>
         <rdfs:comment>&quot;If the underlying URI scheme changes,e.g.from MARIAM identifiers to identifiers.org&quot;</rdfs:comment>
     </owl:Class>
     
@@ -439,6 +446,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#OntologyReference">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A reference to an ontology is a URI pointing to a term in a third-party resource, typically a bio-ontology. An example of an ontology reference is &quot;http://identifiers.org/obo.go/GO:0000278&quot;.</rdfs:comment>
     </owl:Class>
     
 
@@ -466,6 +474,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Person">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A person is a human being that contributed to the development of the model in some way. It</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A person is defined by a dc:terms construct.</rdfs:comment>
     </owl:Class>
     
 
@@ -514,6 +524,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#SbmlLevel">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SbmlSpecification"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The SBML Level describes the structure of a an SBML model in a specific level.</rdfs:comment>
     </owl:Class>
     
 
@@ -522,6 +533,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#SbmlSpecification">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Specification"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The SBML Specification describes the schema of SBML files.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.sbml.org/sbml/"/>
     </owl:Class>
     
 
@@ -530,6 +543,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#SbmlVersion">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SbmlSpecification"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The SBML Version describes the structure of a an SBML model in a specific version.</rdfs:comment>
     </owl:Class>
     
 
@@ -557,6 +571,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Specification">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A specification describes the structure of the model encoding format.</rdfs:comment>
     </owl:Class>
     
 
@@ -581,6 +596,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#TextualDescription">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The textual description of a model is a human-readable explanation of the model. It can be surrounded by layout information, for example to present the textual description in a web browser.
+One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:comment>
         <rdfs:comment>&quot;The Definition of textual description should contain:
     - that it is a human-readable description.
     - plus some layout information for this description&quot;</rdfs:comment>
