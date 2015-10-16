@@ -11,10 +11,10 @@
 
 <rdf:RDF xmlns="http://purl.org/net/comodi#"
      xml:base="http://purl.org/net/comodi"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.org/net/comodi"/>
     
 
@@ -82,8 +82,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#wasTriggeredBy">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
         <rdfs:range rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
     </owl:ObjectProperty>
     
 
@@ -130,6 +130,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Annotation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An annotation is a link to the meta-data of a model or a model entity, including RDF blocks, dc:terms and other controlled vocabularies.</rdfs:comment>
         <rdfs:comment>&quot;Difference between two versions of a model that change the annotations,including RDF blocks,dc:terms and other.&quot;</rdfs:comment>
     </owl:Class>
     
@@ -177,7 +178,9 @@
 
     <!-- http://purl.org/net/comodi#Change -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#Change"/>
+    <owl:Class rdf:about="http://purl.org/net/comodi#Change">
+        <rdfs:comment rdf:datatype="&xsd;string">A Change characterises how the description of a particular entity in a model differs from the description of that entity in another model version.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -209,6 +212,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Correction">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Correction removes an error in a previous description of a model entity.</rdfs:comment>
     </owl:Class>
     
 
@@ -217,6 +221,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#CreationDate">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Date"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The creation date refers to the time when a model or a model entity has been created.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&xsd;dateTime"/>
     </owl:Class>
     
 
@@ -233,6 +239,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Date">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+        <rdfs:isDefinedBy rdf:resource="&xsd;dateTime"/>
     </owl:Class>
     
 
@@ -364,6 +371,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#MismatchWithPublication">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The reason for a change is newly discovered knowledge in the scientific domain.</rdfs:comment>
     </owl:Class>
     
 
@@ -372,6 +380,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#ModelCuration">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The reason for a change is the process of curating a model.</rdfs:comment>
     </owl:Class>
     
 
@@ -396,6 +405,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#ModificationDate">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Date"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The modification date refers to the date and time at which the model or model entity has been modified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&xsd;dateTime"/>
     </owl:Class>
     
 
@@ -527,6 +538,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Simplification">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Simplification decreases the level of complexity by which an entity of the models is described.</rdfs:comment>
     </owl:Class>
     
 
@@ -551,7 +563,9 @@
 
     <!-- http://purl.org/net/comodi#Target -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#Target"/>
+    <owl:Class rdf:about="http://purl.org/net/comodi#Target">
+        <rdfs:comment rdf:datatype="&xsd;string">The Target identifies the technical level of description to which a change is applied.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -584,6 +598,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Typo">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The reason of a change is the correction of misspellings in the description or name of a model or a model entity.</rdfs:comment>
     </owl:Class>
     
 
