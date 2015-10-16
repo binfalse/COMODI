@@ -157,6 +157,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#AttributeValue">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Update"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An attributeValue replaces a particular value (encoded as an XML attribute) with another, for example, it replaces the concentration of an SBML species by a new value.</rdfs:comment>
     </owl:Class>
     
 
@@ -252,6 +253,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Deletion">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A deletion removes a component from the model, for example an annotation, a species, or a reaction.</rdfs:comment>
     </owl:Class>
     
 
@@ -270,6 +272,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#EncodedSystem">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The encoded system describes how a model will be executed and interpreted by analysis tools.</rdfs:comment>
         <rdfs:comment>&quot;Differnences between two versions of a model that are relevant to the execution and interpretation of the model&quot;</rdfs:comment>
     </owl:Class>
     
@@ -332,6 +335,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Insertion">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An insertion adds a new component to the model, for example an annotation, a species, or a reaction.</rdfs:comment>
     </owl:Class>
     
 
@@ -362,6 +366,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#MathematicalModel">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EncodedSystem"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The mathematical model encodes the dynamics of the biological system.</rdfs:comment>
     </owl:Class>
     
 
@@ -422,6 +427,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Move">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A move rearranges parts of the model.</rdfs:comment>
     </owl:Class>
     
 
@@ -430,6 +436,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Network">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EncodedSystem"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The network of a model contains information about the biological entities and how they interact.</rdfs:comment>
     </owl:Class>
     
 
@@ -465,6 +472,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#PermutationOfEntities">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Move"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A permutation of entities changes the order of model parts located on the same level, for example it refers to a change in the order of SBML species inside a listOfSpecies.</rdfs:comment>
         <rdfs:comment>&quot;If the order of entities below XML nodes has changed ,e.g. SBML listOfspecies or SBML listOfReaction.All nodes need to have the same parent/must be siblings&quot;</rdfs:comment>
     </owl:Class>
     
@@ -632,6 +640,7 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Update">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An update replaces a particular part of the model with another, for example, it replaces a species definition with with a new one.</rdfs:comment>
     </owl:Class>
     
 
