@@ -435,9 +435,9 @@
     
 
 
-    <!-- http://purl.org/net/comodi#OntologyLink -->
+    <!-- http://purl.org/net/comodi#OntologyReference -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#OntologyLink">
+    <owl:Class rdf:about="http://purl.org/net/comodi#OntologyReference">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
     </owl:Class>
     
