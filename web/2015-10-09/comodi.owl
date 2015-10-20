@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://purl.org/net/comodi#"
+     xml:base="http://purl.org/net/comodi"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.org/net/comodi"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/comodi#affects -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#affects">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#appliesTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#appliesTo">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#hasChangeType -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#hasChangeType">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Type"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#hasIntenion -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#hasIntenion">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Intention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#hasReason -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#hasReason">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Reason"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#wasTriggeredBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/comodi#wasTriggeredBy">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#Change"/>
+        <rdfs:range rdf:resource="http://purl.org/net/comodi#Change"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/comodi#hadValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/comodi#hadValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/comodi#receivedValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/comodi#receivedValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/comodi#Annotation -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Annotation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:comment>&quot;Difference between two versions of a model that change the annotations,including RDF blocks,dc:terms and other.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#AnnotationScheme -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#AnnotationScheme">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Attribute -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Attribute">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#AttributeValue -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#AttributeValue">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Update"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Attribution -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Attribution">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#TextualDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#CellmlSpecification -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#CellmlSpecification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Change -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Change"/>
+    
+
+
+    <!-- http://purl.org/net/comodi#ComponentDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ComponentDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ComponentHierarchy -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ComponentHierarchy">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Contributor -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Contributor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Correction -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Correction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#CreationDate -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#CreationDate">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Creator -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Creator">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Contributor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Date -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Date">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Deletion -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Deletion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#DocumentLayout -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#DocumentLayout">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:comment>&quot;Differences between two versions of a model that relate to the structure of the XML/RDF encoding.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#EncodedSystem -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#EncodedSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
+        <rdfs:comment>&quot;Differnences between two versions of a model that are relevant to the execution and interpretation of the model&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#EntityIdentifier -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#EntityIdentifier">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#EntityName -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#EntityName">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#EventDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#EventDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:comment>&quot;The definition of a biology-related event has changed&quot;
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Extension -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Extension">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#FunctionDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#FunctionDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#IdentifiersScheme -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#IdentifiersScheme">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+        <rdfs:comment>&quot;If the underlying URI scheme changes,e.g.from MARIAM identifiers to identifiers.org&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Insertion -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Insertion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Intention -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Intention"/>
+    
+
+
+    <!-- http://purl.org/net/comodi#Kinetics -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Kinetics">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#KnowledgeGain -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#KnowledgeGain">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#MathematicalModel -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#MathematicalModel">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EncodedSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#MetaIdentifier -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#MetaIdentifier">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#MismatchWithPublication -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#MismatchWithPublication">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ModelCuration -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ModelCuration">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ModelId -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ModelId">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EntityIdentifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ModelName -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ModelName">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EntityName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ModificationDate -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ModificationDate">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Move -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Move">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Network -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Network">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EncodedSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Node -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Node">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#OntologyLink -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#OntologyLink">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ParameterDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ParameterDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:comment>&quot;The biological meaning of a parameter has changed&quot;
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#PermutationOfEntities -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#PermutationOfEntities">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Move"/>
+        <rdfs:comment>&quot;If the order of entities below XML nodes has changed ,e.g. SBML listOfspecies or SBML listOfReaction.All nodes need to have the same parent/must be siblings&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Person -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Person">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ReactionDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ReactionDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#ReactionNetwork"/>
+        <rdfs:comment>&quot;The Biological meaning of a reaction has changed&quot;
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ReactionNetwork -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ReactionNetwork">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#ReactionReversibility -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#ReactionReversibility">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#ReactionDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Reason -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Reason"/>
+    
+
+
+    <!-- http://purl.org/net/comodi#Rules -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Rules">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#SbmlLevel -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#SbmlLevel">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SbmlSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#SbmlSpecification -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#SbmlSpecification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#SbmlVersion -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#SbmlVersion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#SbmlSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Simplification -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Simplification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#SpeciesDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#SpeciesDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:comment>&quot;The biological definition of a species has changed&quot;
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Specification -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Specification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Target -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Target"/>
+    
+
+
+    <!-- http://purl.org/net/comodi#Text -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Text">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#TextualDescription -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#TextualDescription">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
+        <rdfs:comment>&quot;The Definition of textual description should contain:
+    - that it is a human-readable description.
+    - plus some layout information for this description&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Type -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Type"/>
+    
+
+
+    <!-- http://purl.org/net/comodi#Typo -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Typo">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#UnitDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#UnitDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Update -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Update">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#VariableConnections -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#VariableConnections">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#VariableDefinition -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#VariableDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#VcardScheme -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#VcardScheme">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#XmlEntity -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#XmlEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/net/comodi#Change"/>
+            <rdf:Description rdf:about="http://purl.org/net/comodi#Intention"/>
+            <rdf:Description rdf:about="http://purl.org/net/comodi#Reason"/>
+            <rdf:Description rdf:about="http://purl.org/net/comodi#Target"/>
+            <rdf:Description rdf:about="http://purl.org/net/comodi#Type"/>
+            <rdf:Description rdf:about="http://purl.org/net/comodi#XmlEntity"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
