@@ -6,12 +6,14 @@ As it describes changes, there is the central <code>comodi:Change</code> class r
 The <code>comodi:Change</code> class is connects to 5 other types of classes using 5 different object properties:
 
 <ul>
-<li><code>comodi:actedOn comodi:Entity</code> &mdash; linking the change to a <code>comodi:Entity</code>, which is for example an <em>XML attribute.</em> (see e.g. <a href="#Attribute"><code>comodi:Attribute</code></a>)</li>
-<li><code>comodi:intended comodi:Intention</code> &mdash; explaining the intention of a change, such as an <em>extension</em> of the model. (see e.g. <a href="#Extension"><code>comodi:Extension</code></a>)</li>
-<li><code>comodi:hadReason comodi:Reason</code> &mdash; providing a reason for the change, such as a <em>mismatch with the corresponding publication.</em> (see e.g. <a href="#MismatchWithPublication"><code>comodi:MismatchWithPublication</code></a>)</li>
-<li><code>comodi:changeType comodi:Type</code> &mdash; giving information about the type of change, such as an <em>update.</em> (see e.g. <a href="#Update"><code>comodi:Update</code></a>)</li>
-<li><code>comodi:affected comodi:Target</code> &mdash; indicating which part of the model has changed, such as a <em>species definition.</em> (see e.g. <a href="#SpeciesDefinition"><code>comodi:SpeciesDefinition</code></a>)</li>
+<li><code>comodi:appliesTo comodi:Entity</code> &mdash; linking the change to a <code>comodi:Entity</code>, which is for example an <em>XML attribute.</em> (see e.g. <a href="#Attribute"><code>comodi:Attribute</code></a>)</li>
+<li><code>comodi:hasIntenion comodi:Intention</code> &mdash; explaining the intention of a change, such as an <em>extension</em> of the model. (see e.g. <a href="#Extension"><code>comodi:Extension</code></a>)</li>
+<li><code>comodi:hasReason comodi:Reason</code> &mdash; providing a reason for the change, such as a <em>mismatch with the corresponding publication.</em> (see e.g. <a href="#MismatchWithPublication"><code>comodi:MismatchWithPublication</code></a>)</li>
+<li><code>comodi:hasChangeType comodi:Type</code> &mdash; giving information about the type of change, such as an <em>update.</em> (see e.g. <a href="#Update"><code>comodi:Update</code></a>)</li>
+<li><code>comodi:affects comodi:Target</code> &mdash; indicating which part of the model has changed, such as a <em>species definition.</em> (see e.g. <a href="#SpeciesDefinition"><code>comodi:SpeciesDefinition</code></a>)</li>
 </ul>
+
+In addition, <code>comodi:Change</code>s can be triggered by other <code>comodi:Change</code>s. For example, the deletion of a node triggers the deletion of all its attribute. To represent this knowledge, the <code>comodi:Change</code>s can be connected using the <code>comodi:wasTriggeredBy</code> property.
 
 The following figure visulises this central concept:
 </p>
