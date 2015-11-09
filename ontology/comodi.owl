@@ -268,6 +268,15 @@
     
 
 
+    <!-- http://purl.org/net/comodi#Elaboration -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Elaboration">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+        <rdfs:comment>adding more detail; zomming into the whole model or certain structures and modelling &quot;finer&quot; structures</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/comodi#EncodedSystem -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#EncodedSystem">
@@ -304,10 +313,11 @@
     
 
 
-    <!-- http://purl.org/net/comodi#Extension -->
+    <!-- http://purl.org/net/comodi#Expansion -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#Extension">
+    <owl:Class rdf:about="http://purl.org/net/comodi#Expansion">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+        <rdfs:comment>Expanding a model; including additional entities to covering a significantly larger network; enlarging the domain.</rdfs:comment>
     </owl:Class>
     
 
@@ -367,6 +377,15 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
     <owl:Class rdf:about="http://purl.org/net/comodi#MathematicalModel">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EncodedSystem"/>
         <rdfs:comment rdf:datatype="&xsd;string">The mathematical model encodes the dynamics of the biological system.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Merge -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Merge">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Expansion"/>
+        <rdfs:comment>combine/blend/unite different models into a merged model</rdfs:comment>
     </owl:Class>
     
 
@@ -609,6 +628,15 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
         <rdfs:comment>&quot;The Definition of textual description should contain:
     - that it is a human-readable description.
     - plus some layout information for this description&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#Trial -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#Trial">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
+        <rdfs:comment>play around with the model to e.g. inrease your understanding of the behaviour or to test hypothesis.</rdfs:comment>
     </owl:Class>
     
 
