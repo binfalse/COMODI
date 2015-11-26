@@ -216,7 +216,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Correction">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A Correction removes an error in a previous description of a model entity.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A Correction fixes an error in a description of a model entity.</rdfs:comment>
     </owl:Class>
     
 
@@ -317,7 +317,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Expansion">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
-        <rdfs:comment>Expanding a model; including additional entities to covering a significantly larger network; enlarging the domain.</rdfs:comment>
+        <rdfs:comment>Expanding a model; including additional entities to cover a significantly larger network; enlarging the domain.</rdfs:comment>
     </owl:Class>
     
 
@@ -368,6 +368,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#KnowledgeGain">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Newly discovered knowledge in the scientific domain it to be implemented resulting in a change.</rdfs:comment>
     </owl:Class>
     
 
@@ -402,7 +403,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#MismatchWithPublication">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The reason for a change is newly discovered knowledge in the scientific domain.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A mismatch with the corresponding publication was discovered. A change is necessary to correct it.</rdfs:comment>
     </owl:Class>
     
 
@@ -411,7 +412,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#ModelCuration">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The reason for a change is the process of curating a model.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">An entity was changed during the process of curation.</rdfs:comment>
     </owl:Class>
     
 
@@ -535,7 +536,9 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <!-- http://purl.org/net/comodi#Reason -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#Reason"/>
+    <owl:Class rdf:about="http://purl.org/net/comodi#Reason">
+        <rdfs:comment rdf:datatype="&xsd;string">The reason of a change focuses on the cause of a change.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -636,7 +639,7 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Trial">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Intention"/>
-        <rdfs:comment>play around with the model to e.g. inrease your understanding of the behaviour or to test hypothesis.</rdfs:comment>
+        <rdfs:comment>play around with the model to e.g. inrease your understanding of the behaviour or to test hypotheses.</rdfs:comment>
     </owl:Class>
     
 
@@ -651,7 +654,7 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Typo">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Reason"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The reason of a change is the correction of misspellings in the description or name of a model or a model entity.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">The reason of a change is the correction of misspellings, e.g. in the description or name of a model or a model entity.</rdfs:comment>
     </owl:Class>
     
 
