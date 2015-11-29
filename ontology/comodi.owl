@@ -131,7 +131,6 @@
     <owl:Class rdf:about="http://purl.org/net/comodi#Annotation">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
         <rdfs:comment rdf:datatype="&xsd;string">An annotation is a link to the meta-data of a model or a model entity, including RDF blocks, dc:terms and other controlled vocabularies.</rdfs:comment>
-        <rdfs:comment>&quot;Difference between two versions of a model that change the annotations,including RDF blocks,dc:terms and other.&quot;</rdfs:comment>
     </owl:Class>
     
 
@@ -145,27 +144,11 @@
     
 
 
-    <!-- http://purl.org/net/comodi#Attribute -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#Attribute">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/net/comodi#AttributeValue -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#AttributeValue">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Update"/>
-        <rdfs:comment rdf:datatype="&xsd;string">An attributeValue replaces a particular value (encoded as an XML attribute) with another, for example, it replaces the concentration of an SBML species by a new value.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/net/comodi#Attribution -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Attribution">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#TextualDescription"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Attribution is textual description to thank and appreciated e.g. certain persons or institutions.</rdfs:comment>
     </owl:Class>
     
 
@@ -235,7 +218,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Creator">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Contributor"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A creator is the person who developed the model or its representaiton.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A creator is the person who was involved in the initial development of the model or its representaiton.</rdfs:comment>
     </owl:Class>
     
 
@@ -262,8 +245,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#DocumentLayout">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The document layout encodes the structure of the model encoding.</rdfs:comment>
-        <rdfs:comment>&quot;Differences between two versions of a model that relate to the structure of the XML/RDF encoding.&quot;</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">The document layout encodes the structure of the model encoding. In SBML or CellML for example it reflects the XML layer.</rdfs:comment>
     </owl:Class>
     
 
@@ -281,8 +263,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#EncodedSystem">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Target"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The encoded system describes how a model will be executed and interpreted by analysis tools.</rdfs:comment>
-        <rdfs:comment>&quot;Differnences between two versions of a model that are relevant to the execution and interpretation of the model&quot;</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">The encoded system specifies the actual model (e.g. biological system) that is encoded in a document, how it will be executed and interpreted by analysis tools.</rdfs:comment>
+        <rdfs:comment>Differnences between two versions of a model that are relevant to the execution and interpretation of the model</rdfs:comment>
     </owl:Class>
     
 
@@ -290,7 +272,7 @@
     <!-- http://purl.org/net/comodi#EntityIdentifier -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#EntityIdentifier">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlAttribute"/>
     </owl:Class>
     
 
@@ -298,7 +280,7 @@
     <!-- http://purl.org/net/comodi#EntityName -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#EntityName">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Attribute"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlAttribute"/>
     </owl:Class>
     
 
@@ -307,8 +289,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#EventDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
-        <rdfs:comment>&quot;The definition of a biology-related event has changed&quot;
-</rdfs:comment>
+        <rdfs:comment>The definition of an event in a model. Events can usually be triggered by &quot;something&quot;, might have a delay and typically has an effect.</rdfs:comment>
     </owl:Class>
     
 
@@ -326,6 +307,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#FunctionDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A function definition defines a model specific function that can be used in the model&apos;s math.</rdfs:comment>
     </owl:Class>
     
 
@@ -334,9 +316,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#IdentifiersScheme">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The identifier scheme encodes the structure of identifiers which link the model or its entities to terms in external resources. External resources are mainly bio-ontologies.
-One example for an identifiers scheme is identifiers.org.</rdfs:comment>
-        <rdfs:comment>&quot;If the underlying URI scheme changes,e.g.from MARIAM identifiers to identifiers.org&quot;</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">The identifier scheme encodes the structure of identifiers which link the model or its entities to terms in external resources. External resources are mainly bio-ontologies. Compare for example the schemes of the identifiers http://identifiers.org/obo.go/GO:0000278, urn:miriam:obo.go:GO%3A0005892, and http://amigo.geneontology.org/amigo/term/GO:0030332.</rdfs:comment>
     </owl:Class>
     
 
@@ -352,7 +332,9 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <!-- http://purl.org/net/comodi#Intention -->
 
-    <owl:Class rdf:about="http://purl.org/net/comodi#Intention"/>
+    <owl:Class rdf:about="http://purl.org/net/comodi#Intention">
+        <rdfs:comment rdf:datatype="&xsd;string">The Intention specifies the aim of a change, particularly with respect to consequences in the future.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -360,6 +342,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Kinetics">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Kinetics refer to the model&apos;s kinetics laws.</rdfs:comment>
     </owl:Class>
     
 
@@ -456,15 +439,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Network">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#EncodedSystem"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The network of a model contains information about the biological entities and how they interact.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/net/comodi#Node -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#Node">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The network of a model contains information about the biological entities and how they are related to each other and interact.</rdfs:comment>
     </owl:Class>
     
 
@@ -482,8 +457,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#ParameterDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
-        <rdfs:comment>&quot;The biological meaning of a parameter has changed&quot;
-</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">The definition of a parameter used in a model. It usually has a value and units and can be referred to by its name and/or id.</rdfs:comment>
     </owl:Class>
     
 
@@ -492,8 +466,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#PermutationOfEntities">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Move"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A permutation of entities changes the order of model parts located on the same level, for example it refers to a change in the order of SBML species inside a listOfSpecies.</rdfs:comment>
-        <rdfs:comment>&quot;If the order of entities below XML nodes has changed ,e.g. SBML listOfspecies or SBML listOfReaction.All nodes need to have the same parent/must be siblings&quot;</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A permutation of entities changes the order of model parts sharing the same parent node in the XML document (shuffling siblings), for example it refers to a change in the order of SBML species inside a listOfSpecies.</rdfs:comment>
     </owl:Class>
     
 
@@ -502,8 +475,7 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.org/net/comodi#Person">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A person is a human being that contributed to the development of the model in some way. It</rdfs:comment>
-        <rdfs:comment rdf:datatype="&xsd;string">A person is defined by a dc:terms construct.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A person is a human being that, for example, contributed to the development of the model in some way. It</rdfs:comment>
     </owl:Class>
     
 
@@ -614,23 +586,12 @@ One example for an identifiers scheme is identifiers.org.</rdfs:comment>
     
 
 
-    <!-- http://purl.org/net/comodi#Text -->
-
-    <owl:Class rdf:about="http://purl.org/net/comodi#Text">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/net/comodi#TextualDescription -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#TextualDescription">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Annotation"/>
         <rdfs:comment rdf:datatype="&xsd;string">The textual description of a model is a human-readable explanation of the model. It can be surrounded by layout information, for example to present the textual description in a web browser.
 One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:comment>
-        <rdfs:comment>&quot;The Definition of textual description should contain:
-    - that it is a human-readable description.
-    - plus some layout information for this description&quot;</rdfs:comment>
     </owl:Class>
     
 
@@ -676,6 +637,15 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
     
 
 
+    <!-- http://purl.org/net/comodi#UpdateAttributeValue -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#UpdateAttributeValue">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#Update"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An attributeValue replaces a particular value (encoded as an XML attribute) with another, for example, it replaces the concentration of an SBML species by a new value.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/comodi#VariableConnections -->
 
     <owl:Class rdf:about="http://purl.org/net/comodi#VariableConnections">
@@ -696,6 +666,15 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <owl:Class rdf:about="http://purl.org/net/comodi#VcardScheme">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#DocumentLayout"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The VCardScheme specifies how to refer to other people/institutions in a machine readable format.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#XmlAttribute -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#XmlAttribute">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
     </owl:Class>
     
 
@@ -704,6 +683,22 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <owl:Class rdf:about="http://purl.org/net/comodi#XmlEntity">
         <rdfs:comment>An XML entity is part of the instance of an XML-encoded model.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#XmlNode -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#XmlNode">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/comodi#XmlText -->
+
+    <owl:Class rdf:about="http://purl.org/net/comodi#XmlText">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#XmlEntity"/>
     </owl:Class>
     
 
