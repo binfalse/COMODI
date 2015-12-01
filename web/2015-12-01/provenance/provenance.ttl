@@ -8,6 +8,7 @@
 	 prov:wasAttributedTo <http://www.sbi.uni-rostock.de/team/single/dagmar-waltemath/>;
 	 dc:creator <http://www.sbi.uni-rostock.de/team/single/dagmar-waltemath/>;
 	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Vivek Garg".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Srijana Kayastha".];
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:specializationOf <http://purl.org/net/comodi>;
 	 prov:wasRevisionOf <http://purl.org/net/comodi/2015-10-20>;

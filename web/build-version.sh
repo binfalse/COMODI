@@ -29,13 +29,14 @@ echo "template configuration in $CONF"
 echo "will be copied to and adjusted in $config"
 echo "previous versions was $previous"
 
-cat $CONF | /bin/grep -v VersionURI | /bin/grep -v dateOfRelease > $config
+cat $CONF | /bin/grep -v VersionURI | /bin/grep -v dateOfRelease | /bin/grep -v ontologyRevisionNumber > $config
 
 echo thisVersionURI=http://purl.org/net/comodi/$TODAY >> $config
 echo latestVersionURI=http://purl.org/net/comodi >> $config
 echo previousVersionURI=http://purl.org/net/comodi/$previous >> $config
 echo dateOfRelease=$TODAY >> $config
-
+echo dateOfRelease=$TODAY >> $config
+echo ontologyRevisionNumber=$TODAY >> $config
 
 ############
 echo "running widoco -- see https://github.com/dgarijo/Widoco"
