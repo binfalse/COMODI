@@ -174,6 +174,8 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#ComponentDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A component represents an small functional unit (encapsulated) of the system</rdfs:comment>
+        <rdfs:seeAlso>https://www.cellml.org/specifications/cellml_1.1/#sec_structure_component_element</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -563,8 +565,7 @@
 
     <owl:Class rdf:about="http://purl.org/net/comodi#SpeciesDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
-        <rdfs:comment>&quot;The biological definition of a species has changed&quot;
-</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">Species in a computational model represent (biological) enteties that may interact with each other. They may modify, be consumed or produced by a reaction.</rdfs:comment>
     </owl:Class>
     
 
@@ -658,6 +659,7 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
 
     <owl:Class rdf:about="http://purl.org/net/comodi#VariableDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/comodi#MathematicalModel"/>
+        <rdfs:seeAlso>https://www.cellml.org/specifications/cellml_1.1/#sec_structure_variable_element</rdfs:seeAlso>
     </owl:Class>
     
 
