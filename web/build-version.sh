@@ -31,9 +31,9 @@ echo "previous versions was $previous"
 
 cat $CONF | /bin/grep -v VersionURI | /bin/grep -v dateOfRelease | /bin/grep -v ontologyRevisionNumber > $config
 
-echo thisVersionURI=http://purl.org/net/comodi/$TODAY >> $config
-echo latestVersionURI=http://purl.org/net/comodi >> $config
-echo previousVersionURI=http://purl.org/net/comodi/$previous >> $config
+echo thisVersionURI=http://purl.uni-rostock.de/comodi/$TODAY >> $config
+echo latestVersionURI=http://purl.uni-rostock.de/comodi/ >> $config
+echo previousVersionURI=http://purl.uni-rostock.de/comodi/$previous >> $config
 echo dateOfRelease=$TODAY >> $config
 echo dateOfRelease=$TODAY >> $config
 echo ontologyRevisionNumber=$TODAY >> $config

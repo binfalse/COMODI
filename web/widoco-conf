@@ -1,12 +1,12 @@
 
-abstract=some abstract
-ontologyTitle=COMODI
+abstract=this abstract will be overwritten later
+ontologyTitle=COMODI: An ontology to characterise differences in versions of computational models in biology
 ontologyPrefix=comodi
-ontologyNamespaceURI=http://purl.org/net/comodi
+ontologyNamespaceURI=http://purl.uni-rostock.de/comodi/comodi#
 ontologyName=COMODI
-thisVersionURI=http://purl.org/net/comodi/2015-10-06
-latestVersionURI=http://purl.org/net/comodi
-previousVersionURI=http://purl.org/net/comodi/2015-09-01
+thisVersionURI=http://purl.uni-rostock.de/comodi/2015-10-06
+latestVersionURI=http://purl.uni-rostock.de/comodi/
+previousVersionURI=http://purl.uni-rostock.de/comodi/2015-09-01
 dateOfRelease=2015-10-06
 ontologyRevisionNumber=v2
 licenseURI=http://www.gnu.org/licenses/
