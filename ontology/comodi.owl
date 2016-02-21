@@ -4,7 +4,6 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY teddy "http://identifiers.org/teddy/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -251,14 +250,6 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelDefinition"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.uni-rostock.de/comodi/comodi#EventDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#EventDefinition">
@@ -390,7 +381,7 @@ A modification of the component hierarchy of a CellML model comodi:affects the c
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour">
         <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
-        <rdfs:isDefinedBy rdf:resource="&teddy;TEDDY_0000000"/>
+        <rdfs:isDefinedBy rdf:resource="http://identifiers.org/teddy/TEDDY_0000000"/>
     </owl:Class>
     
 
@@ -439,6 +430,14 @@ The model definition specifies the actual model and its parts.</rdfs:comment>
     
 
 
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ModelSetup -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelSetup">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.uni-rostock.de/comodi/comodi#ModificationDate -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModificationDate">
@@ -476,10 +475,10 @@ The model definition specifies the actual model and its parts.</rdfs:comment>
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#ParameterDefinition -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ParameterSetup -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ParameterDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ParameterSetup">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelSetup"/>
         <rdfs:comment rdf:datatype="&xsd;string">The definition of a parameter used in a model. It usually has a value and units and can be referred to by its name and/or id. 
 
 
@@ -575,10 +574,10 @@ Parameters can be used to define the current environment of a model, such as the
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#SpeciesDefinition -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#SpeciesDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelSetup"/>
         <rdfs:comment rdf:datatype="&xsd;string">Species represent (biological) entities that may interact with each other. They may be modified, consumed or produced by a reaction. 
 
 
@@ -664,10 +663,10 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#VariableDefinition -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#VariableSetup -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VariableDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VariableSetup">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelSetup"/>
         <rdfs:seeAlso>https://www.cellml.org/specifications/cellml_1.1/#sec_structure_variable_element</rdfs:seeAlso>
     </owl:Class>
     
