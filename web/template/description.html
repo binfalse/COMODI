@@ -1,23 +1,30 @@
-<h2>3. COMODI Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>a diagram explaining how the classes are related, examples of usage, etc. our picture.</p>
+<!--<h2>3. COMODI Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>a diagram explaining how the classes are related, examples of usage, etc. our picture.</p> -->
+
 <p>
-COMODI basically consists of 6 types of classes and 5 object properties linking them.
-As it describes changes, there is the central <code>comodi:Change</code> class representing a change in a delta between two versions of a computational model.
-The <code>comodi:Change</code> class is connects to 5 other types of classes using 5 different object properties:
+COMODI consists of six types of classes and five  object properties which link these classes. 
+The central class is <code>comodi:Change</code>. It  represents a change (reflected in a delta) between two versions of a computational model. 
+The <code>comodi:Change</code> class is connected to five other classes, using the five object properties:
 
 <ul>
-<li><code>comodi:appliesTo comodi:Entity</code> &mdash; linking the change to a <code>comodi:Entity</code>, which is for example an <em>XML attribute.</em> (see e.g. <a href="#Attribute"><code>comodi:Attribute</code></a>)</li>
-<li><code>comodi:hasIntention comodi:Intention</code> &mdash; explaining the intention of a change, such as an <em>extension</em> of the model. (see e.g. <a href="#Extension"><code>comodi:Extension</code></a>)</li>
-<li><code>comodi:hasReason comodi:Reason</code> &mdash; providing a reason for the change, such as a <em>mismatch with the corresponding publication.</em> (see e.g. <a href="#MismatchWithPublication"><code>comodi:MismatchWithPublication</code></a>)</li>
-<li><code>comodi:hasChangeType comodi:Type</code> &mdash; giving information about the type of change, such as an <em>update.</em> (see e.g. <a href="#Update"><code>comodi:Update</code></a>)</li>
-<li><code>comodi:affects comodi:Target</code> &mdash; indicating which part of the model has changed, such as a <em>species definition.</em> (see e.g. <a href="#SpeciesDefinition"><code>comodi:SpeciesDefinition</code></a>)</li>
+<li><code>comodi:appliesTo comodi:XmlEntity</code> &mdash; 
+links a change to a <code>comodi:XmlEntity</code>, e.g.,  an <em>XML attribute</em> (see <a href="#XmlAttribute"><code>comodi:XmlAttribute</code></a>).</li>
+
+<li><code>comodi:hasIntention comodi:Intention</code> &mdash; explains the intention of a change, e.g.,  an <em>extension</em> of the model (see <a href="#Expansion"><code>comodi:Expansion</code></a>).</li>
+
+<li><code>comodi:hasReason comodi:Reason</code> &mdash; provides a reason for a change, e.g., a <em>mismatch with the corresponding publication</em> (see <a href="#MismatchWithPublication"><code>comodi:MismatchWithPublication</code></a>).</li>
+
+<li><code>comodi:hasChangeType comodi:Type</code> &mdash; provides information about the type of change, e.g. an <em>update</em> (see <a href="#Update"><code>comodi:Update</code></a>).</li>
+
+<li><code>comodi:affects comodi:Target</code> &mdash; indicates  which part of the model has changed, e.g., a <em>species definition</em> (see <a href="#SpeciesSetup"><code>comodi:SpeciesSetup</code></a>).</li>
 </ul>
 
-In addition, <code>comodi:Change</code>s can be triggered by other <code>comodi:Change</code>s. For example, the deletion of a node triggers the deletion of all its attribute. To represent this knowledge, the <code>comodi:Change</code>s can be connected using the <code>comodi:wasTriggeredBy</code> property.
+In addition, each <code>comodi:Change</code> can be triggered by another <code>comodi:Change</code>. 
+For example, the deletion of a node triggers the deletion of all its attribute. 
+To represent this knowledge, the <code>comodi:Change</code> classes can be connected using the <code>comodi:wasTriggeredBy</code> property.
 
-The following figure visulises this central concept:
+The following figure visualises all classes in COMODI and their properties:
 </p>
-
 <object data="../img/whole.svg" type="image/svg+xml" style="max-width: 100%;" />
 
 
