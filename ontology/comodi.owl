@@ -4,6 +4,7 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY teddy "http://identifiers.org/teddy/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -126,19 +127,10 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#Annotation -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Annotation">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
-        <rdfs:comment rdf:datatype="&xsd;string">An annotation is a link to the meta-data of a model or a model entity, including RDF blocks, dc:terms and other controlled vocabularies.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.uni-rostock.de/comodi/comodi#AnnotationScheme -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#AnnotationScheme">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#DocumentLayout"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelEncoding"/>
         <rdfs:comment rdf:datatype="&xsd;string">The annotation scheme encodes the structure of semantic annotations attached to the model or to the model entities.</rdfs:comment>
     </owl:Class>
     
@@ -153,15 +145,6 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#CellmlSpecification -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#CellmlSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Specification"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The CellML Specification describes the schema of CellML files.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.uni-rostock.de/comodi/comodi#Change -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Change">
@@ -170,20 +153,20 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A component represents an small functional unit (encapsulated) of the system</rdfs:comment>
-        <rdfs:seeAlso>https://www.cellml.org/specifications/cellml_1.1/#sec_structure_component_element</rdfs:seeAlso>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Reason"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#ComponentHierarchy -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ComponentHierarchy">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Network"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A component represents an small functional unit (encapsulated) of the system</rdfs:comment>
+        <rdfs:seeAlso>https://www.cellml.org/specifications/cellml_1.1/#sec_structure_component_element</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -192,7 +175,7 @@
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Contributor">
         <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Person"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A contributor participates in the development of the model.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A contributor is an annotation about a human being, who participated in the development of the model.</rdfs:comment>
     </owl:Class>
     
 
@@ -220,7 +203,7 @@
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Creator">
         <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Contributor"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A creator is the person who was involved in the initial development of the model or its representaiton.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">A creator is an annotation about a human being, who was involved in the initial development of the model or its representaiton.</rdfs:comment>
     </owl:Class>
     
 
@@ -228,7 +211,7 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#Date -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Date">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Annotation"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation"/>
         <rdfs:isDefinedBy rdf:resource="&xsd;dateTime"/>
     </owl:Class>
     
@@ -243,30 +226,11 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#DocumentLayout -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#DocumentLayout">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The document layout encodes the structure of the model encoding. In SBML or CellML for example it reflects the XML layer.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.uni-rostock.de/comodi/comodi#Elaboration -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Elaboration">
         <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Intention"/>
         <rdfs:comment>adding more detail; zomming into the whole model or certain structures and modelling &quot;finer&quot; structures</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.uni-rostock.de/comodi/comodi#EncodedSystem -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#EncodedSystem">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The encoded system specifies the actual model (e.g. biological system) that is encoded in a document, how it will be executed and interpreted by analysis tools.</rdfs:comment>
-        <rdfs:comment>Differnences between two versions of a model that are relevant to the execution and interpretation of the model</rdfs:comment>
     </owl:Class>
     
 
@@ -287,10 +251,18 @@
     
 
 
+    <!-- http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelDefinition"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.uni-rostock.de/comodi/comodi#EventDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#EventDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition"/>
         <rdfs:comment>The definition of an event in a model. Events can usually be triggered by &quot;something&quot;, might have a delay and typically has an effect.</rdfs:comment>
     </owl:Class>
     
@@ -308,16 +280,28 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition"/>
         <rdfs:comment rdf:datatype="&xsd;string">A function definition defines a model specific function that can be used in the model&apos;s math.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#IdentifiersScheme -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#IdentifiersScheme">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#DocumentLayout"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Hierarchies are used to, for example, achieve an encapsulation or to encode hierarchical relationships.
+
+Example:
+A modification of the component hierarchy of a CellML model comodi:affects the comodi:HierarchyDefinition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelEncoding"/>
         <rdfs:comment rdf:datatype="&xsd;string">The identifier scheme encodes the structure of identifiers which link the model or its entities to terms in external resources. External resources are mainly bio-ontologies. Compare for example the schemes of the identifiers http://identifiers.org/obo.go/GO:0000278, urn:miriam:obo.go:GO%3A0005892, and http://amigo.geneontology.org/amigo/term/GO:0030332.</rdfs:comment>
     </owl:Class>
     
@@ -340,10 +324,10 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#Kinetics -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Kinetics">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition"/>
         <rdfs:comment rdf:datatype="&xsd;string">Kinetics refer to the model&apos;s kinetics laws.</rdfs:comment>
     </owl:Class>
     
@@ -358,10 +342,10 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#MathematicalModel -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EncodedSystem"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelDefinition"/>
         <rdfs:comment rdf:datatype="&xsd;string">The mathematical model encodes the dynamics of the biological system.</rdfs:comment>
     </owl:Class>
     
@@ -376,10 +360,10 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#MetaIdentifier -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#MetaIdentifier">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#DocumentLayout"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding"/>
     </owl:Class>
     
 
@@ -393,11 +377,48 @@
     
 
 
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An annotation is a link to the meta-data of a model or a model entity, including RDF blocks, dc:terms and other controlled vocabularies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
+        <rdfs:isDefinedBy rdf:resource="&teddy;TEDDY_0000000"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.uni-rostock.de/comodi/comodi#ModelCuration -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelCuration">
         <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Reason"/>
         <rdfs:comment rdf:datatype="&xsd;string">An entity was changed during the process of curation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ModelDefinition -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Differences between two versions of a model that are relevant to the execution and interpretation of the model.
+The model definition specifies the actual model and its parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ModelEncoding -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ModelEncoding">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The document layout encodes the structure of the model encoding. In SBML or CellML for example it reflects the XML layer.</rdfs:comment>
     </owl:Class>
     
 
@@ -437,10 +458,10 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#Network -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Network">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EncodedSystem"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelDefinition"/>
         <rdfs:comment rdf:datatype="&xsd;string">The network of a model contains information about the biological entities and how they are related to each other and interact.</rdfs:comment>
     </owl:Class>
     
@@ -449,7 +470,7 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#OntologyReference -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#OntologyReference">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Annotation"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation"/>
         <rdfs:comment rdf:datatype="&xsd;string">A reference to an ontology is a URI pointing to a term in a third-party resource, typically a bio-ontology. An example of an ontology reference is &quot;http://identifiers.org/obo.go/GO:0000278&quot;.</rdfs:comment>
     </owl:Class>
     
@@ -458,8 +479,20 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#ParameterDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ParameterDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The definition of a parameter used in a model. It usually has a value and units and can be referred to by its name and/or id.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The definition of a parameter used in a model. It usually has a value and units and can be referred to by its name and/or id. 
+
+
+Example:
+Parameters can be used to define the current environment of a model, such as the temperature. If the value of a parameter changes it comodi:affects the comodi:ParameterDefinition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion"/>
     </owl:Class>
     
 
@@ -476,8 +509,17 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#Person -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Person">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Annotation"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A person is a human being that, for example, contributed to the development of the model in some way. It</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A person is an annotaion about a human being that, for example, contributed to the development of the model in some way.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.uni-rostock.de/comodi/comodi#PortsDefinition -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#PortsDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Ports can be used ...</rdfs:comment>
     </owl:Class>
     
 
@@ -485,25 +527,17 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetwork"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion"/>
         <rdfs:comment>&quot;The Biological meaning of a reaction has changed&quot;
 </rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionNetwork -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionNetwork">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Network"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionReversibility -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionReversibility">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition"/>
     </owl:Class>
     
 
@@ -516,38 +550,18 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#Rules -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Rules">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#SbmlLevel -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#RuleDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#SbmlLevel">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#SbmlSpecification"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The SBML Level describes the structure of a an SBML model in a specific level.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.uni-rostock.de/comodi/comodi#SbmlSpecification -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#SbmlSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Specification"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The SBML Specification describes the schema of SBML files.</rdfs:comment>
-        <rdfs:seeAlso rdf:resource="http://www.sbml.org/sbml/"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.uni-rostock.de/comodi/comodi#SbmlVersion -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#SbmlVersion">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#SbmlSpecification"/>
-        <rdfs:comment rdf:datatype="&xsd;string">The SBML Version describes the structure of a an SBML model in a specific version.</rdfs:comment>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#RuleDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition"/>
     </owl:Class>
     
 
@@ -564,17 +578,12 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#SpeciesDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#SpeciesDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
-        <rdfs:comment rdf:datatype="&xsd;string">Species in a computational model represent (biological) enteties that may interact with each other. They may modify, be consumed or produced by a reaction.</rdfs:comment>
-    </owl:Class>
-    
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Species represent (biological) entities that may interact with each other. They may be modified, consumed or produced by a reaction. 
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#Specification -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Specification">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#DocumentLayout"/>
-        <rdfs:comment rdf:datatype="&xsd;string">A specification describes the structure of the model encoding format.</rdfs:comment>
+Example:
+Changes in the value of the initial concentration comodi:affects the corresponding comodi:SpeciesDefinition.</rdfs:comment>
     </owl:Class>
     
 
@@ -590,7 +599,7 @@
     <!-- http://purl.uni-rostock.de/comodi/comodi#TextualDescription -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#TextualDescription">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Annotation"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation"/>
         <rdfs:comment rdf:datatype="&xsd;string">The textual description of a model is a human-readable explanation of the model. It can be surrounded by layout information, for example to present the textual description in a web browser.
 One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:comment>
     </owl:Class>
@@ -624,7 +633,7 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
     <!-- http://purl.uni-rostock.de/comodi/comodi#UnitDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#UnitDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition"/>
     </owl:Class>
     
 
@@ -647,10 +656,10 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#VariableConnections -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VariableConnections">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Network"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition"/>
     </owl:Class>
     
 
@@ -658,16 +667,16 @@ One example for a textual description is the SBML &lt;notes&gt; element.</rdfs:c
     <!-- http://purl.uni-rostock.de/comodi/comodi#VariableDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VariableDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#MathematicalModel"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#EnvironmentDefinition"/>
         <rdfs:seeAlso>https://www.cellml.org/specifications/cellml_1.1/#sec_structure_variable_element</rdfs:seeAlso>
     </owl:Class>
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#VcardScheme -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#VcardEncoding -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VcardScheme">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#DocumentLayout"/>
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#VcardEncoding">
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ModelEncoding"/>
         <rdfs:comment rdf:datatype="&xsd;string">The VCardScheme specifies how to refer to other people/institutions in a machine readable format.</rdfs:comment>
     </owl:Class>
     
