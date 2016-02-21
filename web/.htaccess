@@ -1,0 +1,22 @@
+# this file is based on recipe 3a of https://www.w3.org/TR/swbp-vocab-pub/
+
+# Turn off MultiViews
+Options -MultiViews
+
+# Directive to ensure *.rdf files served as appropriate content type,
+# if not present in main apache config
+AddType application/rdf+xml .rdf
+AddType application/rdf+xml .owl
+
+# Rewrite engine setup
+RewriteEngine On
+
+# Rewrite rule to make sure we serve HTML content from the namespace URI if requested
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^comodi$ /latest/index.html [R=303]
+
+# Rewrite rule to make sure we serve the RDF/XML content from the namespace URI by default
+RewriteRule ^comodi$ /latest/comodi.owl [R=303]
