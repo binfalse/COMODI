@@ -40,7 +40,7 @@ The following figure visualises all classes in COMODI and their properties:
 
 <h3>3.2. Examples</h3>
 <p>
-Unless noted otherwise, the following examples are based on differences in SBML- or CellML-encoded models.
+Unless otherwise noted, the following examples are based on differences in SBML- or CellML-encoded models.
 These differences are detected using BiVeS [<cite><a class="bibref" rel="biblioentry" href="#bib-BIVES">BIVES</a></cite>].
 To increase the readability, annotations of the examples will be provided in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
 
@@ -167,6 +167,65 @@ Thus, the annotation may look like:
     comodi:appliesTo comodi:EntityName;
     comodi:hasReason comodi:Typo.
 </pre>
+
+</p>
+
+
+
+
+
+
+
+
+<h4>3.2.3. Inline-Annotation of an SED-ML file</h4>
+<p>
+The COMODI ontology can be used to annotate SED-ML files.
+SED-ML is a language to encode simulation descriptions in a standardised format [<cite><a class="bibref" rel="biblioentry" href="#bib-SEDML">SED-ML</a></cite>].
+Using SED-ML it is for example possible to change the model's setup and, thus, to update the environment.
+For instance, a change of a parameter can be encoded as:
+
+<pre>
+[...]
+&lt;model id="model1" name="some name" language="SBML" source="model1"&gt;
+	&lt;listOfChanges&gt;
+		&lt;changeAttribute id="change1" target="/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter[@id='V_m']/@value" newValue="10.27"/&gt;
+	&lt;/listOfChanges&gt;
+&lt;/model&gt;
+[...]
+</pre>
+
+This snippet changes the value of the parameter <code>V_m</code> to <code>10.27</code>.
+The creator of this file might wanted to test a hypothesis, so (s)he had the intention of a trial.
+This change obviously affects the parameter setup.
+
+Using COMODI, this SED-ML file may be annotated to document what the simulation description is going to do.
+This time, we will add an annotation node to the SED-ML document that holds the information encoded using COMODI:
+
+<pre>
+[...]
+&lt;model id="model1" name="some name" language="SBML" source="model1"&gt;
+  &lt;listOfChanges&gt;
+    &lt;changeAttribute id="change1" target="/sbml:sbml/sbml:model/sbml:listOfParameters/sbml:parameter[@id='V_m']/@value" newValue="10.27"&gt;
+      &lt;annotation&gt;
+        &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:comodi="http://purl.uni-rostock.de/comodi/comodi#"&gt;
+                 
+          &lt;rdf:Description rdf:about ="#change1"&gt;
+            &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/&gt;
+            &lt;comodi:hasIntendion rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
+            &lt;comodi:affects rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ParameterSetup"/&gt;
+          &lt;/rdf:Description&gt;
+          
+        &lt;/rdf:RDF&gt;
+      &lt;/annotation&gt;
+    &lt;changeAttribute&gt;
+  &lt;/listOfChanges&gt;
+&lt;/model&gt;
+[...]
+</pre>
+
+
+
 
 </p>
 
