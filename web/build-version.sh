@@ -84,6 +84,9 @@ head -n-6 $OUTDIR/index.html > $tmp
 cat $TEMPLATES/acknowledgements.html >> $tmp
 cp $tmp $OUTDIR/index.html
 
+# copy the current version of the image into the current release
+cp ../doc/whole.svg $OUTDIR/whole.svg
+
 
 
 # linking
