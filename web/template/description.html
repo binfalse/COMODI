@@ -1,5 +1,6 @@
 <h2>3. COMODI Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
+<h3>3.1. The Concept of COMODI</h3>
 <p>
 COMODI consists of six types of classes and five  object properties which link these classes. 
 The central class is <code>comodi:Change</code>. It  represents a change (reflected in a delta) between two versions of a computational model. 
@@ -18,12 +19,154 @@ links a change to a <code>comodi:XmlEntity</code>, e.g.,  an <em>XML attribute</
 <li><code>comodi:affects comodi:Target</code> &mdash; indicates  which part of the model has changed, e.g., a <em>species definition</em> (see <a href="#SpeciesSetup"><code>comodi:SpeciesSetup</code></a>).</li>
 </ul>
 
-In addition, each <code>comodi:Change</code> can be triggered by another <code>comodi:Change</code>. 
+Moreover, each <code>comodi:Change</code> can be triggered by another <code>comodi:Change</code>. 
 For example, the deletion of a node triggers the deletion of all its attribute. 
 To represent this knowledge, the <code>comodi:Change</code> classes can be connected using the <code>comodi:wasTriggeredBy</code> property.
+</p>
 
+<p>
+In addition, the Teddy ontologoy [<cite><a class="bibref" rel="biblioentry" href="#bib-TEDDY">TEDDY</a></cite>] is linked into COMODI at the <code>comodi:ModelBehaviour</code> node.
+Thus, it is also possible to annotate changes that, for example, affect the stability using <a href="http://identifiers.org/teddy/TEDDY_0000148">teddy:0000148</a> (stability characteristic).
+</p>
+
+<p>
 The following figure visualises all classes in COMODI and their properties:
 </p>
 <object id="overview-fig" data="whole.svg" type="image/svg+xml" style="max-width: 100%;" />
 
+
+
+
+
+<h3>3.2. Examples</h3>
+<p>
+Unless noted otherwise, the following examples are based on differences in SBML- or CellML-encoded models.
+These differences are detected using BiVeS [<cite><a class="bibref" rel="biblioentry" href="#bib-BIVES">BIVES</a></cite>].
+To increase the readability, annotations of the examples will be provided in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
+
+You will find further example on the Poster that we presented at the <a href="http://co.mbine.org/events/COMBINE_2015">COMBINE 2015</a> and the <a href="http://icsb15.apbionet.org/">ICSB 2015</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-POSTER">COMODI-POSTER</a></cite>].
+</p>
+
+
+
+<h4>3.2.1. Insertion of a Species</h4>
+
+<p>
+Let's assume a new species is introduced into an SBML model. That means, the later version of the document will contain an additional node in the <code>listOfSpecies</code> substree:
+
+<pre>
+&lt;species name="Glucose" initialConc="0.6" /&gt;
+</pre>
+
+BiVeS, will detect this differences and generate a delta, such as:
+
+<pre>
+&lt;insert&gt;
+	&lt;node id="13" newTag="species" [...] / &gt;
+	&lt;attribute id="14" triggeredBy="1" name="initialConc" newValue="0.6" [...] /&gt;
+	[...]
+&lt;/insert&gt;
+</pre>
+
+
+
+This delta should then be annotated using terms from the COMODI ontology.
+Even though, you would probably think of an insertion of a species of just a single operation, BiVeS recognizes an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes.
+Thus, the delta contains multiple changes and every change should be annotated:
+
+<pre>
+#13 a comodi:Change.
+#14 a comodi:Change.
+</pre>
+
+As both changes correspond to an <em>insertion</em> that probably expand the model they can be annotated using the designated terms:
+
+<pre>
+#13 a comodi:Change;
+    comodi:hasChangeType comodi:Insertion;
+    comodi:hasIntention comodi:Expansion.
+#14 a comodi:Change;
+    comodi:hasChangeType comodi:Insertion;
+    comodi:hasIntention comodi:Expansion.
+</pre>
+
+In addition, change <code>#13</code> was applied to an XML node and this change affects the reaction network. In contrast, change <code>#14</code> was applied to an XML attribute and it affects the model setup, specifically the setup of this species. As we have this knowledge, we should encode it semantically:
+
+<pre>
+#13 a comodi:Change;
+    comodi:hasChangeType comodi:Insertion;
+    comodi:affects comodi:ReactionNetworkDefinition;
+    comodi:appliesTo comodi:XmlNode;
+    comodi:hasIntention comodi:Expansion.
+#14 a comodi:Change;
+    comodi:hasChangeType comodi:Insertion;
+    comodi:hasIntention comodi:Expansion;
+    comodi:affects comodi:SpeciesSetup;
+    comodi:appliesTo comodi:XmlAttribute.
+</pre>
+
+Finally, change <code>#14</code> (the setup of the species' initial concentration) was triggert by change <code>#13</code> (the insertion of the species). Thus, the final annotation may look like the following:
+
+<pre>
+#13 a comodi:Change;
+    comodi:hasChangeType comodi:Insertion;
+    comodi:affects comodi:ReactionNetworkDefinition;
+    comodi:appliesTo comodi:XmlNode;
+    comodi:hasIntention comodi:Expansion.
+#14 a comodi:Change;
+    comodi:hasChangeType comodi:Insertion;
+    comodi:hasIntention comodi:Expansion;
+    comodi:affects comodi:SpeciesSetup;
+    comodi:appliesTo comodi:XmlAttribute;
+    comodi:wasTriggeredBy #13.
+</pre>
+</p>
+
+
+
+
+
+
+
+
+<h4>3.2.1. Update of a Typo</h4>
+<p>
+Let's assume you introduced a typo in a name of a special in an SBML model.
+The species definition in the SBML document might look like:
+
+<pre>
+&lt;species name="Gulcose" initialConc="0.6" /&gt;
+</pre>
+
+You recognised the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
+
+<pre>
+&lt;species name="Glucose" initialConc="0.6" /&gt;
+</pre>
+
+
+Using BiVeS, you may obtain the following delta:
+
+<pre>
+&lt;update&gt;
+	&lt;attribute id="23" newValue="Glucose" name="name" oldValue="Gulcose" /&gt;
+	[...]
+&lt;/update&gt;
+</pre>
+
+That means, BiVeS correctly recognized the update of the name attribute.<br/>
+This change should now be annotated.
+We know that it was a <em>correction</em>, because there was a <em>typo</em>.
+This change is an <em>update</em> and was applied to an <em>entity name</em>.
+Thus, the annotation may look like:
+
+<pre>
+#23 a comodi:Change;
+    comodi:hasChangeType comodi:Update;
+    comodi:hasIntention comodi:Correction.
+    comodi:appliesTo comodi:EntityName;
+    comodi:hasReason comodi:Typo.
+</pre>
+
+</p>
 
