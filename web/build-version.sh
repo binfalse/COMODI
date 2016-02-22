@@ -80,12 +80,15 @@ cp $TEMPLATES/references.html $OUTDIR/sections
 
 # update acknoledgements
 echo "acknowledgements ..."
-head -n-6 $OUTDIR/index.html > $tmp
+head -n-6 $OUTDIR/index.html | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script>%' > $tmp
 cat $TEMPLATES/acknowledgements.html >> $tmp
 cp $tmp $OUTDIR/index.html
 
+# copy js
+cp $TEMPLATES/js.js $OUTDIR/resources/js.js
+
 # copy the current version of the image into the current release
-cp ../doc/whole.svg $OUTDIR/whole.svg
+[ -f ../doc/whole-incl-links.svg ] && cp ../doc/whole-incl-links.svg $OUTDIR/whole.svg || cp ../doc/whole.svg $OUTDIR/whole.svg
 
 
 
