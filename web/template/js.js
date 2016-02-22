@@ -23,7 +23,6 @@ function activateSmoothScroll ()
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
                     if (target.length)
                     {
-                        console.log ("tmp");
                         $('html, body').animate(
                                 {
                                     scrollTop: target.offset().top

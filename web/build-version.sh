@@ -52,37 +52,38 @@ echo ".... done with widoco"
 echo "updating files, using templates in $TEMPLATES"
 # copy abstract
 echo "abstract ..."
-cp $TEMPLATES/abstract.html $OUTDIR/sections
+cp $TEMPLATES/abstract.html $OUTDIR/sections/abstract-en.html
 
 # copy intro
 echo "intro ..."
-cp $TEMPLATES/introduction.html $OUTDIR/sections
+cp $TEMPLATES/introduction.html $OUTDIR/sections/introduction-en.html
 
 # replace in overview: <p>Overview of the ontology goes here: a few sentences explaining the main concepts of the ontology</p>
 echo "overview ..."
 tmp=$(mktemp)
 cp $TEMPLATES/overview.html $tmp
-tail -n+3 $OUTDIR/sections/overview.html | sed 's/##/#/g' >> $tmp
-cp $tmp $OUTDIR/sections/overview.html
+tail -n+3 $OUTDIR/sections/overview-en.html | sed 's/##/#/g' >> $tmp
+cp $tmp $OUTDIR/sections/overview-en.html
 
 # copy description
 echo "description ..."
-cp $TEMPLATES/description.html $OUTDIR/sections
+cp $TEMPLATES/description.html $OUTDIR/sections/description-en.html
 
 # fix links in crossref
 echo "crossref ..."
-cat $OUTDIR/sections/crossref.html | sed 's/##/#/g' | sed 's/id="#/id="/' > $tmp
-cp $tmp $OUTDIR/sections/crossref.html
+cat $OUTDIR/sections/crossref-en.html | sed 's/##/#/g' | sed 's/id="#/id="/' > $tmp
+cp $tmp $OUTDIR/sections/crossref-en.html
 
 # copy references
 echo "references ..."
-cp $TEMPLATES/references.html $OUTDIR/sections
+cp $TEMPLATES/references.html $OUTDIR/sections/references-en.html
 
 # update acknoledgements
 echo "acknowledgements ..."
-head -n-6 $OUTDIR/index.html | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script>%' > $tmp
+head -n-6 $OUTDIR/index-en.html | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script>%' > $tmp
 cat $TEMPLATES/acknowledgements.html >> $tmp
-cp $tmp $OUTDIR/index.html
+cp $tmp $OUTDIR/index-en.html
+ln -s index-en.html $OUTDIR/index.html
 
 # copy js
 cp $TEMPLATES/js.js $OUTDIR/resources/js.js
