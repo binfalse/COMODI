@@ -128,16 +128,16 @@ Finally, change <code>#14</code> (the setup of the species' initial concentratio
 
 
 
-<h4>3.2.2. Update of a Typo</h4>
+<h4>3.2.2. Correction of a Typo (SBML)</h4>
 <p>
-Let's assume you introduced a typo in a name of a special in an SBML model.
-The species definition in the SBML document might look like:
+Let's assume you introduced a typo in the name of an SBML species.
+At first, the species definition in the SBML document might look like:
 
 <pre>
 &lt;species name="Gulcose" initialConc="0.6" /&gt;
 </pre>
 
-You recognised the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
+You recognize the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
@@ -153,10 +153,10 @@ Using BiVeS, you may obtain the following delta:
 &lt;/update&gt;
 </pre>
 
-That means, BiVeS correctly recognized the update of the name attribute.<br/>
-This change should now be annotated.
-We know that it was a <em>correction</em>, because there was a <em>typo</em>.
-This change is an <em>update</em> and was applied to an <em>entity name</em>.
+That means, BiVeS correctly recognizes the update of the name attribute.<br/>
+This change should now be annotated with COMODI terms. 
+We know that the update was a <em>correction</em>, because there had been a <em>typo</em>.
+The change is of type <em>update</em> and was applied to an <em>entity name</em>.
 Thus, the annotation may look like:
 
 <pre>
