@@ -137,7 +137,7 @@ At first, the species definition in the SBML document might look like:
 &lt;species name="Gulcose" initialConc="0.6" /&gt;
 </pre>
 
-You recognize the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
+You recognise the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
@@ -153,7 +153,7 @@ Using BiVeS, you may obtain the following delta:
 &lt;/update&gt;
 </pre>
 
-That means, BiVeS correctly recognizes the update of the name attribute.<br/>
+That means, BiVeS correctly recognises the update of the name attribute.<br/>
 This change should now be annotated with COMODI terms. 
 We know that the update was a <em>correction</em>, because there had been a <em>typo</em>.
 The change is of type <em>update</em> and was applied to an <em>entity name</em>.
@@ -176,12 +176,12 @@ Thus, the annotation may look like:
 
 
 
-<h4>3.2.3. Inline-Annotation of an SED-ML file</h4>
+<h4>3.2.3. Inline-annotation of  SED-ML files</h4>
 <p>
-The COMODI ontology can be used to annotate SED-ML files.
+The COMODI ontology can also be used to annotate SED-ML files.  
 SED-ML is a language to encode simulation descriptions in a standardised format [<cite><a class="bibref" rel="biblioentry" href="#bib-SEDML">SED-ML</a></cite>].
-Using SED-ML it is for example possible to change the model's setup and, thus, to update the environment.
-For instance, a change of a parameter can be encoded as:
+Using SED-ML it is, for example, possible to change the model's setup and, thus, to update the environment. 
+For instance, a change of a parameter value in an SBML file can be encoded in SED-ML as:
 
 <pre>
 [...]
@@ -197,8 +197,8 @@ This snippet changes the value of the parameter <code>V_m</code> to <code>10.27<
 The creator of this file might wanted to test a hypothesis, so (s)he had the intention of a trial.
 This change obviously affects the parameter setup.
 
-Using COMODI, this SED-ML file may be annotated to document what the simulation description is going to do.
-This time, we will add an <code>&lt;annotation&gt;</code> node directly into the SED-ML document. This node holds the information encoded using COMODI:
+Using COMODI, the above section in the SED-ML file may be annotated to explain what the simulation description is going to do to the original model. 
+This time, we will add an <code>&lt;annotation&gt;</code> node directly into the SED-ML document:
 
 <pre>
 [...]
@@ -211,7 +211,7 @@ This time, we will add an <code>&lt;annotation&gt;</code> node directly into the
                  
           &lt;rdf:Description rdf:about ="#change1"&gt;
             &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/&gt;
-            &lt;comodi:hasIntendion rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
+            &lt;comodi:hasIntention rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
             &lt;comodi:affects rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ParameterSetup"/&gt;
           &lt;/rdf:Description&gt;
           
