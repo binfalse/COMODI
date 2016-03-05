@@ -789,6 +789,14 @@ A CellML model defines the participants of a biological system as variables. The
     
 
 
+    <!-- http://purl.uni-rostock.de/comodi/comodi#_obsolete -->
+
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#_obsolete">
+        <rdfs:comment rdf:datatype="&xsd;string">Terms in this subtree are obsolete and shouldn&apos;t be used anymore.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
