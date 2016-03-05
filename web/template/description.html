@@ -40,25 +40,26 @@ The following figure visualises all classes in COMODI and their properties:
 
 <h3>3.2. Examples</h3>
 <p>
-Unless otherwise noted, the following examples are based on differences in SBML- or CellML-encoded models.
+Unless otherwise noted, the following examples are based on differences that we detected in SBML- or CellML-encoded models.
 These differences are detected using BiVeS [<cite><a class="bibref" rel="biblioentry" href="#bib-BIVES">BIVES</a></cite>].
 To increase the readability, annotations of the examples will be provided in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
 
 You will find further example on the Poster that we presented at the <a href="http://co.mbine.org/events/COMBINE_2015">COMBINE 2015</a> and the <a href="http://icsb15.apbionet.org/">ICSB 2015</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-POSTER">COMODI-POSTER</a></cite>].
 </p>
 
+The examples require a basic understanding of the encoding formats, please refer to the <a href="http://sbml.org">SBML</a> and <a href="http://cellml.org">CellML</a> homepage. 
 
 
-<h4>3.2.1. Insertion of a Species</h4>
+<h4>3.2.1. Insertion of a Species (SBML)</h4>
 
 <p>
-Let's assume a new species is introduced into an SBML model. That means, the later version of the document will contain an additional node in the <code>listOfSpecies</code> substree:
+Let's assume a new species is introduced into an SBML model. As a consequence, the later version of the document will contain an additional node in the <code>listOfSpecies</code> substree, e.g.:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
 </pre>
 
-BiVeS, will detect this differences and generate a delta, such as:
+BiVeS detects this difference and generates a delta that looks like:
 
 <pre>
 &lt;insert&gt;
@@ -68,18 +69,16 @@ BiVeS, will detect this differences and generate a delta, such as:
 &lt;/insert&gt;
 </pre>
 
-
-
-This delta should then be annotated using terms from the COMODI ontology.
-Even though, you would probably think of an insertion of a species of just a single operation, BiVeS recognizes an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes.
-Thus, the delta contains multiple changes and every change should be annotated:
+Even though you would probably think of the insertion of a species as just a single operation, BiVeS recognizes several changes: an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes. 
+Thus, the delta contains multiple changes and every change should be annotated. 
+Using the COMODI onology, we can speficy the nature of all changes in detail:
 
 <pre>
 #13 a comodi:Change.
 #14 a comodi:Change.
 </pre>
 
-As both changes correspond to an <em>insertion</em> that probably expand the model they can be annotated using the designated terms:
+Both changes correspond to an <em>insertion</em> and we assume that this insertion expands the model: 
 
 <pre>
 #13 a comodi:Change;
@@ -105,7 +104,7 @@ In addition, change <code>#13</code> was applied to an XML node and this change 
     comodi:appliesTo comodi:XmlAttribute.
 </pre>
 
-Finally, change <code>#14</code> (the setup of the species' initial concentration) was triggert by change <code>#13</code> (the insertion of the species). Thus, the final annotation may look like the following:
+Finally, change <code>#14</code> (the setup of the species' initial concentration) was triggered by change <code>#13</code> (the insertion of the species). After including this information, the final annotation looks like:
 
 <pre>
 #13 a comodi:Change;
@@ -129,16 +128,16 @@ Finally, change <code>#14</code> (the setup of the species' initial concentratio
 
 
 
-<h4>3.2.2. Update of a Typo</h4>
+<h4>3.2.2. Correction of a Typo (SBML)</h4>
 <p>
-Let's assume you introduced a typo in a name of a special in an SBML model.
-The species definition in the SBML document might look like:
+Let's assume you introduced a typo in the name of an SBML species.
+At first, the species definition in the SBML document might look like:
 
 <pre>
 &lt;species name="Gulcose" initialConc="0.6" /&gt;
 </pre>
 
-You recognised the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
+You recognise the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
@@ -154,10 +153,10 @@ Using BiVeS, you may obtain the following delta:
 &lt;/update&gt;
 </pre>
 
-That means, BiVeS correctly recognized the update of the name attribute.<br/>
-This change should now be annotated.
-We know that it was a <em>correction</em>, because there was a <em>typo</em>.
-This change is an <em>update</em> and was applied to an <em>entity name</em>.
+That means, BiVeS correctly recognises the update of the name attribute.<br/>
+This change should now be annotated with COMODI terms. 
+We know that the update was a <em>correction</em>, because there had been a <em>typo</em>.
+The change is of type <em>update</em> and was applied to an <em>entity name</em>.
 Thus, the annotation may look like:
 
 <pre>
@@ -177,12 +176,12 @@ Thus, the annotation may look like:
 
 
 
-<h4>3.2.3. Inline-Annotation of an SED-ML file</h4>
+<h4>3.2.3. Inline-annotation of  SED-ML files</h4>
 <p>
-The COMODI ontology can be used to annotate SED-ML files.
+The COMODI ontology can also be used to annotate SED-ML files.  
 SED-ML is a language to encode simulation descriptions in a standardised format [<cite><a class="bibref" rel="biblioentry" href="#bib-SEDML">SED-ML</a></cite>].
-Using SED-ML it is for example possible to change the model's setup and, thus, to update the environment.
-For instance, a change of a parameter can be encoded as:
+Software tools use SED-ML to encode changes to the model's setup and, thus, updates of the environment. 
+For instance, a change of a parameter value in an SBML file can be encoded in SED-ML as:
 
 <pre>
 [...]
@@ -198,8 +197,8 @@ This snippet changes the value of the parameter <code>V_m</code> to <code>10.27<
 The creator of this file might wanted to test a hypothesis, so (s)he had the intention of a trial.
 This change obviously affects the parameter setup.
 
-Using COMODI, this SED-ML file may be annotated to document what the simulation description is going to do.
-This time, we will add an <code>&lt;annotation&gt;</code> node directly into the SED-ML document. This node holds the information encoded using COMODI:
+Using COMODI, the above section in the SED-ML file may be annotated to explain what the simulation description is going to do to the original model. 
+This time, we will add an <code>&lt;annotation&gt;</code> node directly into the SED-ML document:
 
 <pre>
 [...]
@@ -212,7 +211,7 @@ This time, we will add an <code>&lt;annotation&gt;</code> node directly into the
                  
           &lt;rdf:Description rdf:about ="#change1"&gt;
             &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/&gt;
-            &lt;comodi:hasIntendion rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
+            &lt;comodi:hasIntention rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
             &lt;comodi:affects rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ParameterSetup"/&gt;
           &lt;/rdf:Description&gt;
           
