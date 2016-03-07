@@ -1,0 +1,16 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<http://purl.uni-rostock.de/comodi/2016-03-07> a prov:Entity;
+	 dc:title "COMODI: An ontology to characterise differences in versions of computational models in biology";
+	 prov:wasAttributedTo <http://binfalse.de>;
+	 dc:creator <http://binfalse.de>;
+	 prov:wasAttributedTo <http://www.sbi.uni-rostock.de/team/single/dagmar-waltemath/>;
+	 dc:creator <http://www.sbi.uni-rostock.de/team/single/dagmar-waltemath/>;
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Vivek Garg".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Srijana Kayastha".];
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://purl.uni-rostock.de/comodi/>;
+	 prov:wasRevisionOf <http://purl.uni-rostock.de/comodi/2016-03-05>;
+	 prov:wasGeneratedAt "2016-03-07";
+.
