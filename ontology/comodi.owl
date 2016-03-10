@@ -49,16 +49,6 @@
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#hasChangeType -->
-
-    <owl:ObjectProperty rdf:about="http://purl.uni-rostock.de/comodi/comodi#hasChangeType">
-        <rdfs:domain rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
-        <rdfs:range rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Type"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.uni-rostock.de/comodi/comodi#hasIntention -->
 
     <owl:ObjectProperty rdf:about="http://purl.uni-rostock.de/comodi/comodi#hasIntention">
@@ -223,7 +213,7 @@ The upgrade from SBML Level 2 to SBML Level 3 resulted in many changes in SBML m
     <!-- http://purl.uni-rostock.de/comodi/comodi#Deletion -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Deletion">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Type"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
         <rdfs:comment rdf:datatype="&xsd;string">A Deletion removes a component from the model.
 
 Example: 
@@ -322,7 +312,7 @@ SBML used different identifier schemes in the past, including identifiers.org (h
     <!-- http://purl.uni-rostock.de/comodi/comodi#Insertion -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Insertion">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Type"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
         <rdfs:comment rdf:datatype="&xsd;string">An Insertion adds a new component to the model.
 
 Example:
@@ -492,7 +482,7 @@ The amount of Glucose in an environment could be specified using a parameter. A 
     <!-- http://purl.uni-rostock.de/comodi/comodi#Move -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Move">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Type"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
         <rdfs:comment rdf:datatype="&xsd;string">A move rearranges parts of the model.</rdfs:comment>
     </owl:Class>
     
@@ -683,14 +673,6 @@ Models may be examined to better understand their dynamic behaviour, or to test 
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#Type -->
-
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Type">
-        <rdfs:comment rdf:datatype="&xsd;string">A Type characterises the change on the XML level.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://purl.uni-rostock.de/comodi/comodi#Typo -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Typo">
@@ -712,7 +694,7 @@ Models may be examined to better understand their dynamic behaviour, or to test 
     <!-- http://purl.uni-rostock.de/comodi/comodi#Update -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#Update">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Type"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
         <rdfs:comment rdf:datatype="&xsd;string">An Update replaces a part of the model with another part. 
 
 Example: 
@@ -794,6 +776,7 @@ A CellML model defines the participants of a biological system as variables. The
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#_obsolete">
         <rdfs:comment rdf:datatype="&xsd;string">Terms in this subtree are obsolete and shouldn&apos;t be used anymore.</rdfs:comment>
     </owl:Class>
+
     
 
 
@@ -812,7 +795,6 @@ A CellML model defines the participants of a biological system as variables. The
             <rdf:Description rdf:about="http://purl.uni-rostock.de/comodi/comodi#Intention"/>
             <rdf:Description rdf:about="http://purl.uni-rostock.de/comodi/comodi#Reason"/>
             <rdf:Description rdf:about="http://purl.uni-rostock.de/comodi/comodi#Target"/>
-            <rdf:Description rdf:about="http://purl.uni-rostock.de/comodi/comodi#Type"/>
             <rdf:Description rdf:about="http://purl.uni-rostock.de/comodi/comodi#XmlEntity"/>
         </owl:members>
     </rdf:Description>
