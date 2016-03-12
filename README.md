@@ -9,6 +9,12 @@ _(click to get a larger version)_
 
 The COMODI namespace is `http://purl.uni-rostock.de/comodi/comodi#` and we recommend using `comodi:` as a prefix. That means if you want to address the `KnowledgeGain` term you should go for `comodi:KnowledgeGain` to link to `http://purl.uni-rostock.de/comodi/comodi#KnowledgeGain`.
 
+## Where to Go?
+* [COMODI web page.](http://purl.uni-rostock.de/comodi/comodi)
+* the [COMODI wiki](https://github.com/SemsProject/COMODI/wiki)
+* Please [help us improving COMODI](https://github.com/SemsProject/COMODI/wiki/Please-Send-Comments)
+* There is a [Poster on COMODI](https://dx.doi.org/10.6084/m9.figshare.2543059) that we presented on various occascions.
+* A journal artical is under revision and will be published soon.
 
 ## License
 ![CC-BY-SA](http://purl.uni-rostock.de/comodi/license.png) This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
