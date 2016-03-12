@@ -52,12 +52,12 @@ function loadHash() {
 <h2>Abstract</h2>
 <p>
 The COMODI ontology is needed because COmputational MOdels DIffer.
-COMODI provides a set of classes and properties that empowers users and software to represent and describe changes in computational models on the semantic level.
-COMODI also enables software to implement user-specific filter options for the display of model changes.
-COMODI is the next step towards predicting how a change in a model influences the simulation study.
+COMODI defines classes and properties to represent changes in computational models on the semantic level.
+These terms empower users and software to describe model changes in detail.
+Software can implement user-specific filter options for model changes and potentially predict how a change in a model influences a simulation study.
 </p>
 <p>
-<strong>The OWL encoding</strong> of the COMODI Ontology is available <a href="comodi.owl"> from our web server.</a><br />
+<strong>The OWL encoding</strong> of the COMODI Ontology is available from our web server: <a href="comodi.owl">comodi.owl</a>.<br />
 <strong>The namespace</strong> for all COMODI terms is <code>http://purl.uni-rostock.de/comodi/comodi#</code>.<br /> 
 <strong>Please cite COMODI as:</strong><br />
 Scharm, Martin; Waltemath, Dagmar; Wolkenhauer, Olaf (2016): <strong>COMODI: COmputational MOdels DIffer - a hands-on-poster.</strong> figshare. <a href="https://dx.doi.org/10.6084/m9.figshare.2543059.v3">https://dx.doi.org/10.6084/m9.figshare.2543059.v3</a><br />
@@ -70,7 +70,7 @@ We would like to encourage everyone to contribute to the COMODI ontology.
 <!--If you have to have suggestions for new terms, or if you  We constantly seek expertise and input from developers, modellers, and other scientists. -->
 Please submit your feedback, suggestions for new terms, or change requests
 <!-- either <a href="http://www.sbi.uni-rostock.de/team/single/martin-scharm/">via E-Mail</a> or -->
-through our  <a href="https://github.com/SemsProject/COMODI/issues/new">issue tracker on github.</a>
+through our  <a href="https://github.com/SemsProject/COMODI/wiki/Please-Send-Comments">github project.</a>
 </div>
 <div id="toc"><h2>Table of contents</h2>
 <ul>
@@ -91,13 +91,12 @@ through our  <a href="https://github.com/SemsProject/COMODI/issues/new">issue tr
 <div id="introduction">
 <h2>1. Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
-Open model repositories such as <a href="http://www.ebi.ac.uk/biomodels-main/">BioModels</a>, <a href="http://jjj.biochem.sun.ac.za/models/">JWS Online</a>, <a href="http://www.opensourcebrain.org/">OpenSourceBrain</a>, or the <a href="http://www.cellml.org/models">Physiome Model Repository</a> provide ready-to-reuse computational models of biological systems. 
-Each model evolves over time, leading to many alternative and subsequent versions. 
-Taken together, the underlying changes reflect a model's provenance and thus can give valuable insights into the studied biology (see <a href="http://bioinformatics.oxfordjournals.org/content/32/4/563">Scharm et al 2015</a>). 
-However, the most common standard exchange formats for models (<a href="http://sbml.org/">SBML</a>, <a href="https://www.cellml.org/">CellML</a>, <a href="https://www.neuroml.org/">NeuroML</a>)  are based on XML and thus cannot be semantically interpreted. 
+Open model repositories such as <a href="http://www.ebi.ac.uk/biomodels-main/">BioModels</a>, <a href="http://jjj.biochem.sun.ac.za/models/">JWS Online</a>, <a href="http://www.opensourcebrain.org/">OpenSourceBrain</a>, or the <a href="http://www.cellml.org/models">Physiome Model Repository</a> provide ready-to-reuse computational models of biological systems in standard exchange formats (<a href="http://sbml.org/">SBML</a>, <a href="https://www.cellml.org/">CellML</a>, <a href="https://www.neuroml.org/">NeuroML</a>, <a href="http://www.pharmml.org/">PharmML</a>).
+The models within the repositories evolve over time, leading to many alternative and subsequent versions. 
+Taken together, the underlying changes reflect a model's provenance and thus can give valuable insights into the studied biology (see <a href="http://bioinformatics.oxfordjournals.org/content/32/4/563">Scharm et al 2015</a>).
 
 COMODI was developed to overcome this limitation. The ontology serves as a basis for  scientists and software developers to  characterise model updates at the level of single changes. 
-When studying or reusing a model, these annotations help with determining the relevance of a change in a given context. 
+These annotations can help to determine the relevance of a change in a given context. 
 They furthermore enable scientists to "replay"  a model's history and understand <i>which</i> changes occurred and <i>why</i>.
 
 <div id="notations">
@@ -596,9 +595,9 @@ The following figure visualises all classes in COMODI and their properties:
 <p>
 Unless otherwise noted, the following examples are based on differences that we detected in SBML- or CellML-encoded models.
 These differences are detected using BiVeS [<cite><a class="bibref" rel="biblioentry" href="#bib-BIVES">BIVES</a></cite>].
-To increase the readability, annotations of the examples will be provided in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
+To increase the readability, annotations of the examples are given in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
 
-You will find further example on the Poster that we presented at the <a href="http://co.mbine.org/events/COMBINE_2015">COMBINE 2015</a> and the <a href="http://icsb15.apbionet.org/">ICSB 2015</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-POSTER">COMODI-POSTER</a></cite>].
+Further examplesare provided on a Poster that we presented at the <a href="http://co.mbine.org/events/COMBINE_2015">COMBINE 2015</a> and the <a href="http://icsb15.apbionet.org/">ICSB 2015</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-POSTER">COMODI-POSTER</a></cite>].
 </p>
 
 The examples require a basic understanding of the encoding formats, please refer to the <a href="http://sbml.org">SBML</a> and <a href="http://cellml.org">CellML</a> homepage. 
@@ -607,7 +606,7 @@ The examples require a basic understanding of the encoding formats, please refer
 <h4>3.2.1. Insertion of a Species (SBML)</h4>
 
 <p>
-Let's assume a new species is introduced into an SBML model. As a consequence, the later version of the document will contain an additional node in the <code>listOfSpecies</code> substree, e.g.:
+Let's assume a new species had been introduced into an SBML model. As a consequence, the current version of the document contains an additional node in the <code>listOfSpecies</code> substree, e.g.:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
@@ -623,7 +622,7 @@ BiVeS detects this difference and generates a delta that looks like:
 &lt;/insert&gt;
 </pre>
 
-Even though you would probably think of the insertion of a species as just a single operation, BiVeS recognizes several changes: an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes. 
+Even though you would probably think of the insertion of a species as just a single operation, BiVeS recognises several changes: an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes. 
 Thus, the delta contains multiple changes and every change should be annotated. 
 Using the COMODI onology, we can speficy the nature of all changes in detail:
 
@@ -678,21 +677,21 @@ Finally, change <code>#14</code> (the setup of the species' initial concentratio
 
 <h4>3.2.2. Correction of a Typo (SBML)</h4>
 <p>
-Let's assume you introduced a typo in the name of an SBML species.
-At first, the species definition in the SBML document might look like:
+Let's assume you resolved a typo in the name of an SBML species.
+At first, the species definition in the SBML document did look like:
 
 <pre>
 &lt;species name="Gulcose" initialConc="0.6" /&gt;
 </pre>
 
-You recognise the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
+You recognised the mistake (typo in the name of the species) and corrected the species to produce the following species definition in the XML tree:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
 </pre>
 
 
-Using BiVeS, you may obtain the following delta:
+Using BiVeS, you obtain the following delta:
 
 <pre>
 &lt;update&gt;
@@ -704,7 +703,7 @@ Using BiVeS, you may obtain the following delta:
 That means, BiVeS correctly recognises the update of the name attribute.<br/>
 This change should now be annotated with COMODI terms. 
 We know that the update was a <em>correction</em>, because there had been a <em>typo</em>.
-The change is of type <em>update</em> and was applied to an <em>entity name</em>.
+The change is an <em>update</em> and is applied to an <em>entity name</em>.
 Thus, the annotation may look like:
 
 <pre>
@@ -757,7 +756,7 @@ This time, we will add an <code>&lt;annotation&gt;</code> node directly into the
                  xmlns:comodi="http://purl.uni-rostock.de/comodi/comodi#"&gt;
                  
           &lt;rdf:Description rdf:about ="#change1"&gt;
-            &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/&gt;
+            &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Update"/&gt;
             &lt;comodi:hasIntention rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
             &lt;comodi:affects rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ParameterSetup"/&gt;
           &lt;/rdf:Description&gt;
@@ -2898,7 +2897,7 @@ This section provides details for each class and property defined by COMODI.
 <dd>Martin Scharm, Olaf Wolkenhauer, and Dagmar Waltemath: <strong>An algorithm to detect and communicate the differences in computational models describing biological systems.</strong>  Bioinformatics (2016) 32 (4): 563-570. doi: <a href="http://dx.doi.org/10.1093/bioinformatics/btv484">10.1093/bioinformatics/btv484</a> </dd>
 
 <dt id="bib-POSTER">[COMODI-POSTER]</dt>
-<dd>Scharm, Martin; Waltemath, Dagmar; Wolkenhauer, Olaf (2015): <strong>COMODI: COmputational MOdels DIffer - a hands-on-poster.</strong> figshare. <a href="https://dx.doi.org/10.6084/m9.figshare.2543059.v3">10.6084/m9.figshare.2543059.v3</a> (initial version: <a href="https://dx.doi.org/10.6084/m9.figshare.2543059.v1">10.6084/m9.figshare.2543059.v1</a>)</dd>
+<dd>Scharm, Martin; Waltemath, Dagmar; Wolkenhauer, Olaf (2015): <strong>COMODI: COmputational MOdels DIffer - a hands-on-poster.</strong> figshare. doi: <a href="https://dx.doi.org/10.6084/m9.figshare.2543059.v3">10.6084/m9.figshare.2543059.v3</a> (initial version: <a href="https://dx.doi.org/10.6084/m9.figshare.2543059.v1">10.6084/m9.figshare.2543059.v1</a>)</dd>
 
 <dt id="bib-IRI">[IRI]</dt>
 <dd>M. Duerst, M. Suignard. <strong>Internationalized Resource Identifiers (IRI).</strong> Internet RFC 3987. URL: <a href="http://www.ietf.org/rfc/rfc3986.txt">http://www.ietf.org/rfc/rfc3987.txt</a> </dd>
@@ -2907,10 +2906,10 @@ This section provides details for each class and property defined by COMODI.
 <dd>S. Bradner. <strong>Key words for use in RFCs to Indicate Requirement Levels.</strong> March 1997. Internet RFC 2119.  URL: <a href="http://www.ietf.org/rfc/rfc2119.txt">http://www.ietf.org/rfc/rfc2119.txt</a></dd>
 
 <dt id="bib-SEDML">[SED-ML]</dt>
-<dd>Waltemath D., Adams R., Bergmann F.T., Hucka M., Kolpakov F., Miller A.K., Moraru I.I., Nickerson D., Snoep J.L., Novere, N.: <strong>Reproducible computational biology experiments with SED-ML - The Simulation Experiment Description Markup Language.</strong> BMC Systems Biology 2011, 5:198</dd>
+<dd>Waltemath D., Adams R., Bergmann F.T., Hucka M., Kolpakov F., Miller A.K., Moraru I.I., Nickerson D., Snoep J.L., Novere, N.: <strong>Reproducible computational biology experiments with SED-ML - The Simulation Experiment Description Markup Language.</strong> BMC Systems Biology 2011, 5:198. doi: <a href="http://dx.doi.org/10.1186/1752-0509-5-198">10.1186/1752-0509-5-198</a>/dd>
 
 <dt id="bib-TEDDY">[TEDDY]</dt>
-<dd>Courtot M., Juty N., Knüpfer C., Waltemath D., Zhukova A., Dräger A., Dumontier M., Finney A., Golebiewski M., Hastings J., Hoops S., Keating S., Kell D.B., Kerrien S., Lawson J., Lister A., Lu J., Machne R., Mendes P., Pocock M., Rodriguez N., Villeger A., Wilkinson D.J., Wimalaratne S., Laibe C., Hucka M., Novere N. (2011) <strong>Controlled vocabularies and semantics in systems biology.</strong> Molecular Systems Biology, 7:543.</dd>
+<dd>Courtot M., Juty N., Knüpfer C., Waltemath D., Zhukova A., Dräger A., Dumontier M., Finney A., Golebiewski M., Hastings J., Hoops S., Keating S., Kell D.B., Kerrien S., Lawson J., Lister A., Lu J., Machne R., Mendes P., Pocock M., Rodriguez N., Villeger A., Wilkinson D.J., Wimalaratne S., Laibe C., Hucka M., Novere N. (2011) <strong>Controlled vocabularies and semantics in systems biology.</strong> Molecular Systems Biology, 7:543. doi: <a href="http://dx.doi.org/10.1038/msb.2011.77">10.1038/msb.2011.77</a></dd>
 
 <dt id="bib-TURTLE">[TURTLE]</dt>
 <dd>Eric Prud'hommeaux, Gavin Carothers; eds. <strong>Turtle: Terse RDF Triple Language.</strong> W3C Working Draft. URL: <a href="http://www.w3.org/TR/2011/WD-turtle-20110809/">http://www.w3.org/TR/2011/WD-turtle-20110809/</a></dd>

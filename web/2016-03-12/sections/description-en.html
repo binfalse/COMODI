@@ -41,9 +41,9 @@ The following figure visualises all classes in COMODI and their properties:
 <p>
 Unless otherwise noted, the following examples are based on differences that we detected in SBML- or CellML-encoded models.
 These differences are detected using BiVeS [<cite><a class="bibref" rel="biblioentry" href="#bib-BIVES">BIVES</a></cite>].
-To increase the readability, annotations of the examples will be provided in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
+To increase the readability, annotations of the examples are given in Turtle format [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>].
 
-You will find further example on the Poster that we presented at the <a href="http://co.mbine.org/events/COMBINE_2015">COMBINE 2015</a> and the <a href="http://icsb15.apbionet.org/">ICSB 2015</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-POSTER">COMODI-POSTER</a></cite>].
+Further examplesare provided on a Poster that we presented at the <a href="http://co.mbine.org/events/COMBINE_2015">COMBINE 2015</a> and the <a href="http://icsb15.apbionet.org/">ICSB 2015</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-POSTER">COMODI-POSTER</a></cite>].
 </p>
 
 The examples require a basic understanding of the encoding formats, please refer to the <a href="http://sbml.org">SBML</a> and <a href="http://cellml.org">CellML</a> homepage. 
@@ -52,7 +52,7 @@ The examples require a basic understanding of the encoding formats, please refer
 <h4>3.2.1. Insertion of a Species (SBML)</h4>
 
 <p>
-Let's assume a new species is introduced into an SBML model. As a consequence, the later version of the document will contain an additional node in the <code>listOfSpecies</code> substree, e.g.:
+Let's assume a new species had been introduced into an SBML model. As a consequence, the current version of the document contains an additional node in the <code>listOfSpecies</code> substree, e.g.:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
@@ -68,7 +68,7 @@ BiVeS detects this difference and generates a delta that looks like:
 &lt;/insert&gt;
 </pre>
 
-Even though you would probably think of the insertion of a species as just a single operation, BiVeS recognizes several changes: an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes. 
+Even though you would probably think of the insertion of a species as just a single operation, BiVeS recognises several changes: an insertion of a species <strong>plus</strong> the insertions of the species' properties and attributes. 
 Thus, the delta contains multiple changes and every change should be annotated. 
 Using the COMODI onology, we can speficy the nature of all changes in detail:
 
@@ -123,21 +123,21 @@ Finally, change <code>#14</code> (the setup of the species' initial concentratio
 
 <h4>3.2.2. Correction of a Typo (SBML)</h4>
 <p>
-Let's assume you introduced a typo in the name of an SBML species.
-At first, the species definition in the SBML document might look like:
+Let's assume you resolved a typo in the name of an SBML species.
+At first, the species definition in the SBML document did look like:
 
 <pre>
 &lt;species name="Gulcose" initialConc="0.6" /&gt;
 </pre>
 
-You recognise the mistake (typo in the name of the species) and correct the species to produce the following species definition in the XML tree:
+You recognised the mistake (typo in the name of the species) and corrected the species to produce the following species definition in the XML tree:
 
 <pre>
 &lt;species name="Glucose" initialConc="0.6" /&gt;
 </pre>
 
 
-Using BiVeS, you may obtain the following delta:
+Using BiVeS, you obtain the following delta:
 
 <pre>
 &lt;update&gt;
@@ -149,7 +149,7 @@ Using BiVeS, you may obtain the following delta:
 That means, BiVeS correctly recognises the update of the name attribute.<br/>
 This change should now be annotated with COMODI terms. 
 We know that the update was a <em>correction</em>, because there had been a <em>typo</em>.
-The change is of type <em>update</em> and was applied to an <em>entity name</em>.
+The change is an <em>update</em> and is applied to an <em>entity name</em>.
 Thus, the annotation may look like:
 
 <pre>
@@ -202,7 +202,7 @@ This time, we will add an <code>&lt;annotation&gt;</code> node directly into the
                  xmlns:comodi="http://purl.uni-rostock.de/comodi/comodi#"&gt;
                  
           &lt;rdf:Description rdf:about ="#change1"&gt;
-            &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/&gt;
+            &lt;rdf:type rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Update"/&gt;
             &lt;comodi:hasIntention rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Trial"/&gt;
             &lt;comodi:affects rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ParameterSetup"/&gt;
           &lt;/rdf:Description&gt;
