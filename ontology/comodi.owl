@@ -35,7 +35,6 @@
     <owl:ObjectProperty rdf:about="http://purl.uni-rostock.de/comodi/comodi#affects">
         <rdfs:domain rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
         <rdfs:range rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Target"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -63,7 +62,6 @@
     <owl:ObjectProperty rdf:about="http://purl.uni-rostock.de/comodi/comodi#hasReason">
         <rdfs:domain rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Change"/>
         <rdfs:range rdf:resource="http://purl.uni-rostock.de/comodi/comodi#Reason"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -776,7 +774,6 @@ A CellML model defines the participants of a biological system as variables. The
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#_obsolete">
         <rdfs:comment rdf:datatype="&xsd;string">Terms in this subtree are obsolete and shouldn&apos;t be used anymore.</rdfs:comment>
     </owl:Class>
-
     
 
 
