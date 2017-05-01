@@ -13,8 +13,9 @@ The COMODI namespace is `http://purl.uni-rostock.de/comodi/comodi#` and we recom
 * [COMODI web page.](http://purl.uni-rostock.de/comodi/comodi)
 * the [COMODI wiki](https://github.com/SemsProject/COMODI/wiki)
 * Please [help us improving COMODI](https://github.com/SemsProject/COMODI/wiki/Please-Send-Comments)
+* A journal article describes the ontology: [COMODI: an ontology to characterise differences in versions of computational models in biology](http://jbiomedsem.biomedcentral.com/articles/10.1186/s13326-016-0080-2)
 * There is a [Poster on COMODI](https://dx.doi.org/10.6084/m9.figshare.2543059) that we presented on various occascions.
-* A journal artical is under revision and will be published soon.
+* The ontology is also [available from BioPortal](http://bioportal.bioontology.org/ontologies/COMODI?p=summary).
 
 ## License
 ![CC-BY-SA](http://purl.uni-rostock.de/comodi/license.png) This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
