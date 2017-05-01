@@ -523,7 +523,7 @@ Parameters can be used to define the current environment of a model, such as the
     <!-- http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition"/>
         <rdfs:comment rdf:datatype="&xsd;string">A ParticipantDefinition describes the participants in the network. 
 
 Example: 
@@ -568,7 +568,7 @@ The import/export from different software tools may change the order of the sbml
     <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition -->
 
     <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition">
-        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition"/>
         <rdfs:comment>A ReactionDefinition describes a particular reaction taking place in the model. 
 
 
@@ -578,9 +578,9 @@ A comodi:Change in a comodi:ReactionDefinition indicates that the biological mea
     
 
 
-    <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion -->
+    <!-- http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition -->
 
-    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefintion">
+    <owl:Class rdf:about="http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition">
         <rdfs:subClassOf rdf:resource="http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition"/>
         <rdfs:comment rdf:datatype="&xsd;string">A ReactioNetworkDefinition describes the structure of the network underlying a model.</rdfs:comment>
     </owl:Class>
