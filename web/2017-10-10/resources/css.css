@@ -12,7 +12,7 @@ em.rfc2119 {
 #feedback {
         display: block;
         position: fixed;
-        top: 45%;
+        top: 450px;
         left: 0;
 }
 #feedback a {
