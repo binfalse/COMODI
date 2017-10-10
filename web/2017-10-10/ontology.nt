@@ -1,0 +1,414 @@
+<http://purl.uni-rostock.de/comodi/comodi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.uni-rostock.de/comodi/comodi#affects
+<http://purl.uni-rostock.de/comodi/comodi#affects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#affects> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#affects> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#appliesTo
+<http://purl.uni-rostock.de/comodi/comodi#appliesTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#appliesTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#appliesTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#hasIntention
+<http://purl.uni-rostock.de/comodi/comodi#hasIntention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#hasIntention> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#hasIntention> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#hasReason
+<http://purl.uni-rostock.de/comodi/comodi#hasReason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#hasReason> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#hasReason> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#wasTriggeredBy
+<http://purl.uni-rostock.de/comodi/comodi#wasTriggeredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#wasTriggeredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#wasTriggeredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#wasTriggeredBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.uni-rostock.de/comodi/comodi#hadValue
+<http://purl.uni-rostock.de/comodi/comodi#hadValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#hadValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#receivedValue
+<http://purl.uni-rostock.de/comodi/comodi#receivedValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.uni-rostock.de/comodi/comodi#receivedValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding
+<http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelEncoding> .
+<http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding> <http://www.w3.org/2000/01/rdf-schema#comment> "An annotation scheme encodes the structure of semantic annotations attached to the model or to the model entities." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Attribution
+<http://purl.uni-rostock.de/comodi/comodi#Attribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Attribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#TextualDescription> .
+<http://purl.uni-rostock.de/comodi/comodi#Attribution> <http://www.w3.org/2000/01/rdf-schema#comment> "Attribution is textual description to thank and appreciated e.g. certain persons or institutions." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Change
+<http://purl.uni-rostock.de/comodi/comodi#Change> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Change> <http://www.w3.org/2000/01/rdf-schema#comment> "A Change characterises how the description of a particular entity in a model differs from the description of that entity in another model or model version." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification
+<http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+<http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Models are changed when the encoding standard is updated. In that case, the comodi:Reason of a change is a comodi:ChangedSpecification. \n\nExample:\nThe upgrade from SBML Level 2 to SBML Level 3 resulted in many changes in SBML models, which were necessary due to the comodi:ChangedSpecification." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition
+<http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A ComponentDefinition describes a small functional unit of the system." .
+<http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://www.cellml.org/specifications/cellml_1.1/#sec_structure_component_element" .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Contributor
+<http://purl.uni-rostock.de/comodi/comodi#Contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Contributor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Person> .
+<http://purl.uni-rostock.de/comodi/comodi#Contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "A Contributor is an annotation about a human being, who participated in the development of the model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Correction
+<http://purl.uni-rostock.de/comodi/comodi#Correction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Correction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+<http://purl.uni-rostock.de/comodi/comodi#Correction> <http://www.w3.org/2000/01/rdf-schema#comment> "A Correction resolves an error in a model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#CreationDate
+<http://purl.uni-rostock.de/comodi/comodi#CreationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#CreationDate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Date> .
+<http://purl.uni-rostock.de/comodi/comodi#CreationDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The CreationDate refers to the date and time when a model or a model entity was created." .
+<http://purl.uni-rostock.de/comodi/comodi#CreationDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Creator
+<http://purl.uni-rostock.de/comodi/comodi#Creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Creator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Contributor> .
+<http://purl.uni-rostock.de/comodi/comodi#Creator> <http://www.w3.org/2000/01/rdf-schema#comment> "A Creator is an annotation about a human being, who was involved in the initial development of the model or its representaiton." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Date
+<http://purl.uni-rostock.de/comodi/comodi#Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Date> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> .
+<http://purl.uni-rostock.de/comodi/comodi#Date> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Deletion
+<http://purl.uni-rostock.de/comodi/comodi#Deletion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Deletion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#Deletion> <http://www.w3.org/2000/01/rdf-schema#comment> "A Deletion removes a component from the model.\n\nExample: \nA comodi:Change may delete a cellml:component from the network." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Elaboration
+<http://purl.uni-rostock.de/comodi/comodi#Elaboration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Elaboration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+<http://purl.uni-rostock.de/comodi/comodi#Elaboration> <http://www.w3.org/2000/01/rdf-schema#comment> "An Elaboration adds more detail to the model. \n\nExample:\nA new version of a model may provide a zoom into the model or certain structures therein, or it may provide more details on particular structures inside the model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#EntityIdentifier
+<http://purl.uni-rostock.de/comodi/comodi#EntityIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#EntityIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#XmlAttribute> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#EntityName
+<http://purl.uni-rostock.de/comodi/comodi#EntityName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#EntityName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#XmlAttribute> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#EventDefinition
+<http://purl.uni-rostock.de/comodi/comodi#EventDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#EventDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#EventDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "An EventDefinition describes events that occur in the system. \n\nExample:\nEvents are usually triggered by \"something\". They may have a delay and they typically have an effect on the system's dynamics." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Expansion
+<http://purl.uni-rostock.de/comodi/comodi#Expansion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Expansion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+<http://purl.uni-rostock.de/comodi/comodi#Expansion> <http://www.w3.org/2000/01/rdf-schema#comment> "An Expansion adds new entities to the model in order to cover a significantly larger network, or to enlarge the domain of the model.\n\nExample:\nA model describing the Interphase of the Cell Cycle may be expanded to cover the Cell division." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition
+<http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A FunctionDefinition describes a model-specific function that can be used in the model's maths." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition
+<http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A HierarchyDefinition describes, for example, how to achieve an encapsulation or how to encode hierarchical relationships.\n\nExample:\nA modification of the component hierarchy of a CellML model comodi:affects the comodi:HierarchyDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding
+<http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelEncoding> .
+<http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding> <http://www.w3.org/2000/01/rdf-schema#comment> "An IdentifierEncoding specifies the structure of identifiers. That includes the encoding of links to external resources and links to entities in the model document. \n\n\nExample: \nSBML used different identifier schemes in the past, including identifiers.org (http://identifiers.org/obo.go/GO:0000278) and MIRIAM URNs (urn:miriam:obo.go:GO%3A0000278)." .
+<http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.cellml.org/specifications/cellml_1.1/#sec_fundamentals_identifiers> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Insertion
+<http://purl.uni-rostock.de/comodi/comodi#Insertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Insertion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#Insertion> <http://www.w3.org/2000/01/rdf-schema#comment> "An Insertion adds a new component to the model.\n\nExample:\nFor the reason of a comodi:Extension, we may insert a new sbml:parameter in the XML code." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Intention
+<http://purl.uni-rostock.de/comodi/comodi#Intention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Intention> <http://www.w3.org/2000/01/rdf-schema#comment> "An Intention specifies the aim of a change, particularly with respect to consequences in the future." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition
+<http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A KineticsDefinition describes a kinetic law.\n\n\nExample:\nThe sbml:kineticLaw specifies the rate law of a reaction. A change in the kineticLaw comodi:affects the comodi:KineticsDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#KnowledgeGain
+<http://purl.uni-rostock.de/comodi/comodi#KnowledgeGain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#KnowledgeGain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+<http://purl.uni-rostock.de/comodi/comodi#KnowledgeGain> <http://www.w3.org/2000/01/rdf-schema#comment> "A KnowledgeGain is the process of acquiring new knowledge about the model, or the modeled system." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition
+<http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A MathematicalModelDefinition defines structural parts of the model that affect the dynamics of the system." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Merge
+<http://purl.uni-rostock.de/comodi/comodi#Merge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Merge> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Expansion> .
+<http://purl.uni-rostock.de/comodi/comodi#Merge> <http://www.w3.org/2000/01/rdf-schema#comment> "A Merge is the result of a combination, blend or unification of different models into a new model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding
+<http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding> .
+<http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding> <http://www.w3.org/2000/01/rdf-schema#comment> "A MetaIdEncoding specifies the structure of meta-ids, that is global identifiers in the model that can be used to refer to model parts." .
+<http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.cellml.org/specifications/cellml_1.1/#sec_fundamentals_identifiers> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#MismatchWithPublication
+<http://purl.uni-rostock.de/comodi/comodi#MismatchWithPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#MismatchWithPublication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+<http://purl.uni-rostock.de/comodi/comodi#MismatchWithPublication> <http://www.w3.org/2000/01/rdf-schema#comment> "A MismatchWithPublication reflects that a discrepancy between the model and the corresponding publication was discovered." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation
+<http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "A ModelAnnotation provides meta-data about the model and its parts. \nPopular annotations include RDF blocks, dc:terms and other controlled vocabularies." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour
+<http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://identifiers.org/teddy/TEDDY_0000000> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelCuration
+<http://purl.uni-rostock.de/comodi/comodi#ModelCuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelCuration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelCuration> <http://www.w3.org/2000/01/rdf-schema#comment> "ModelCuration is the process of analysing the model itself and its correspondence to the publication. (https://www.ebi.ac.uk/biomodels-main/curationtips)" .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelDefinition
+<http://purl.uni-rostock.de/comodi/comodi#ModelDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A ModelDefinition specifies a certain aspect of a model. A model typically contains a positive number of model definitions.\n\nExample:\nThe sbml:kineticLaw specifies the rate law of a reaction. A change in the kineticLaw comodi:affects the comodi:ModelDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelEncoding
+<http://purl.uni-rostock.de/comodi/comodi#ModelEncoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelEncoding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelEncoding> <http://www.w3.org/2000/01/rdf-schema#comment> "The ModelEncoding defines how the different parts of the model are to be encoded. \n\n\nExample:\nIn SBML or CellML, the comodi:ModelEncoding reflects the structure of the XML layer." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelId
+<http://purl.uni-rostock.de/comodi/comodi#ModelId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelId> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#EntityIdentifier> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelName
+<http://purl.uni-rostock.de/comodi/comodi#ModelName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#EntityName> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModelSetup
+<http://purl.uni-rostock.de/comodi/comodi#ModelSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+<http://purl.uni-rostock.de/comodi/comodi#ModelSetup> <http://www.w3.org/2000/01/rdf-schema#comment> "The ModelSetup specifies necessary settings to initialise a model.\n\nExample:\nThe amount of Glucose in an environment could be specified using a parameter. A change in the amount comodi:affects the comodi:ModelSetup, but does not affect the comodi:ModelDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ModificationDate
+<http://purl.uni-rostock.de/comodi/comodi#ModificationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ModificationDate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Date> .
+<http://purl.uni-rostock.de/comodi/comodi#ModificationDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A ModificationDate refers to the date and time when a model or a model entity was modified." .
+<http://purl.uni-rostock.de/comodi/comodi#ModificationDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Move
+<http://purl.uni-rostock.de/comodi/comodi#Move> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Move> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#Move> <http://www.w3.org/2000/01/rdf-schema#comment> "A move rearranges parts of the model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition
+<http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A NetworkDefinition specifies the biological entities, how they are related to each other, and how they interact." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#OntologyReference
+<http://purl.uni-rostock.de/comodi/comodi#OntologyReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#OntologyReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> .
+<http://purl.uni-rostock.de/comodi/comodi#OntologyReference> <http://www.w3.org/2000/01/rdf-schema#comment> "An OntologyReference refers to a a term in a third-party resource, using a URI. \n\nExample: \nAn example of an ontology reference is \"http://identifiers.org/obo.go/GO:0000278\"." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ParameterSetup
+<http://purl.uni-rostock.de/comodi/comodi#ParameterSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ParameterSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelSetup> .
+<http://purl.uni-rostock.de/comodi/comodi#ParameterSetup> <http://www.w3.org/2000/01/rdf-schema#comment> "The ParameterSetup describes the value and units of a parameter in a model. \n\n\nExample:\nParameters can be used to define the current environment of a model, such as the temperature. If the value of a parameter changes it comodi:affects the comodi:ParameterDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition
+<http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A ParticipantDefinition describes the participants in the network. \n\nExample: \nA comodi:Change of an sbml:Species used in an sbml:reaction targets the comodi:ParticipantDefinition.\nA comodi:Change in a comodi:ParticipantDefinition indicates that the role or definition of the biological entity have changed." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#PermutationOfEntities
+<http://purl.uni-rostock.de/comodi/comodi#PermutationOfEntities> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#PermutationOfEntities> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Move> .
+<http://purl.uni-rostock.de/comodi/comodi#PermutationOfEntities> <http://www.w3.org/2000/01/rdf-schema#comment> "A PermutationOfEntities changes the order of model parts sharing the same parent node in the XML document (shuffling siblings).\n\n\nExample: \nThe import/export from different software tools may change the order of the sbml:species in the sbml:listOfSpecies. This shuffling is reflected in a comodi:PermutationOfEntities." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Person
+<http://purl.uni-rostock.de/comodi/comodi#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> .
+<http://purl.uni-rostock.de/comodi/comodi#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A Person is an annotaion about a human being that, for example, contributed to the development of the model in some way." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#PortDefinition
+<http://purl.uni-rostock.de/comodi/comodi#PortDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#PortDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#PortDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A PortDefinition provides structure to input and output values and enables a convenient graphical representation of models. Ports are the basis for the definition of links in a network of models, representing the flow of information." .
+<http://purl.uni-rostock.de/comodi/comodi#PortDefinition> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "Bekey, George, and Boris Ja Kogan, eds. Modeling and Simulation: Theory and Practice: A Memorial Volume for Professor Walter J. Karplus (1927\u20132001). Springer Science & Business Media, 2012." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition
+<http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A ReactionDefinition describes a particular reaction taking place in the model. \n\n\nExample:\nA comodi:Change in a comodi:ReactionDefinition indicates that the biological meaning of a reaction has changed." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition
+<http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A ReactioNetworkDefinition describes the structure of the network underlying a model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Reason
+<http://purl.uni-rostock.de/comodi/comodi#Reason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Reason> <http://www.w3.org/2000/01/rdf-schema#comment> "The reason of a change focuses on the cause of a change." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition
+<http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A ReversibilityDefinition describes the nature of the reaction, identifying it as reversible or irreversible." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#RuleDefinition
+<http://purl.uni-rostock.de/comodi/comodi#RuleDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#RuleDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#RuleDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A RuleDefinition specifies the values of the variables in a model, and the dynamic behaviors of those variables." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Simplification
+<http://purl.uni-rostock.de/comodi/comodi#Simplification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Simplification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+<http://purl.uni-rostock.de/comodi/comodi#Simplification> <http://www.w3.org/2000/01/rdf-schema#comment> "A Simplification decreases the level of complexity by which the model or its entities are described." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup
+<http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelSetup> .
+<http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup> <http://www.w3.org/2000/01/rdf-schema#comment> "The SpeciesSetup defines a (biological) entity in the model. \n\n\nExample:\nChanges in the value of the initial concentration comodi:affects the corresponding comodi:SpeciesDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Target
+<http://purl.uni-rostock.de/comodi/comodi#Target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Target> <http://www.w3.org/2000/01/rdf-schema#comment> "The Target identifies the location of a comodi:Change, and characterises its nature. It thus defines where the comodi:Change takes affect. \n\nExample:\nA comodi:Change may affect the comodi:Annotation of a cellml:component. \nA comodi:Change may also affect the comodi:UnitDefinition of an sbml:Species." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#TextualDescription
+<http://purl.uni-rostock.de/comodi/comodi#TextualDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#TextualDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation> .
+<http://purl.uni-rostock.de/comodi/comodi#TextualDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The TextualDescription of a model is a human-readable explanation of the model. It can be surrounded by layout information, for example to present the textual description in a web browser.\n\nExample:\nOne example for a textual description is the SBML <notes> element." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Trial
+<http://purl.uni-rostock.de/comodi/comodi#Trial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Trial> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+<http://purl.uni-rostock.de/comodi/comodi#Trial> <http://www.w3.org/2000/01/rdf-schema#comment> "A Trial is a change resulting from playing around with the model.\n\nExample: \nModels may be examined to better understand their dynamic behaviour, or to test hypotheses. In these cases, the changes are the result of a comodi:Trial." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Typo
+<http://purl.uni-rostock.de/comodi/comodi#Typo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Typo> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+<http://purl.uni-rostock.de/comodi/comodi#Typo> <http://www.w3.org/2000/01/rdf-schema#comment> "A Typo is a misspelling, e.g. in the description or name of a model or a model entity." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#UnitDefinition
+<http://purl.uni-rostock.de/comodi/comodi#UnitDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#UnitDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#UnitDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A UnitDefinition specifies a unit." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#Update
+<http://purl.uni-rostock.de/comodi/comodi#Update> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#Update> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+<http://purl.uni-rostock.de/comodi/comodi#Update> <http://www.w3.org/2000/01/rdf-schema#comment> "An Update replaces a part of the model with another part. \n\nExample: \nA comodi:Change may require the exchange of a species definition with an updated one." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition
+<http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition> .
+<http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "A VariableConnectionDefinition describes how variables in a model are connected with each other.\n\nExample:\nA CellML model defines the participants of a biological system as variables. These variables can be part of different cellml:components. The comodi:VariableConnectionDefinition then defines how the variables are connected across the cellml:components. A change in these connections thus comodi:affects the comodi:VariableConnectionDefinition." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#VariableSetup
+<http://purl.uni-rostock.de/comodi/comodi#VariableSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#VariableSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#ModelSetup> .
+<http://purl.uni-rostock.de/comodi/comodi#VariableSetup> <http://www.w3.org/2000/01/rdf-schema#comment> "The VariableSetup defines the values of variables in a model component." .
+<http://purl.uni-rostock.de/comodi/comodi#VariableSetup> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.cellml.org/specifications/cellml_1.1/#sec_structure_variable_element> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#VcardEncoding
+<http://purl.uni-rostock.de/comodi/comodi#VcardEncoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#VcardEncoding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding> .
+<http://purl.uni-rostock.de/comodi/comodi#VcardEncoding> <http://www.w3.org/2000/01/rdf-schema#comment> "The VcardEncoding specifies how to refer to other people/institutions in a machine readable format." .
+<http://purl.uni-rostock.de/comodi/comodi#VcardEncoding> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.w3.org/TR/vcard-rdf/> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#XmlAttribute
+<http://purl.uni-rostock.de/comodi/comodi#XmlAttribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlAttribute> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlAttribute> <http://www.w3.org/2000/01/rdf-schema#comment> "An XmlAttribute contains data related to a specific XML element. (http://www.w3schools.com/xml/xml_attributes.asp)" .
+<http://purl.uni-rostock.de/comodi/comodi#XmlAttribute> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.w3schools.com/xml/xml_attributes.asp> .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#XmlEntity
+<http://purl.uni-rostock.de/comodi/comodi#XmlEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "An XML entity is part of the instance of an XML-encoded model." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#XmlNode
+<http://purl.uni-rostock.de/comodi/comodi#XmlNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlNode> <http://www.w3.org/2000/01/rdf-schema#comment> "An XmlNode represents a node in the XML tree." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#XmlText
+<http://purl.uni-rostock.de/comodi/comodi#XmlText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlText> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+<http://purl.uni-rostock.de/comodi/comodi#XmlText> <http://www.w3.org/2000/01/rdf-schema#comment> "An XmlText represents the textual content of an element or attribute." .
+# 
+# http://purl.uni-rostock.de/comodi/comodi#_obsolete
+<http://purl.uni-rostock.de/comodi/comodi#_obsolete> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.uni-rostock.de/comodi/comodi#_obsolete> <http://www.w3.org/2000/01/rdf-schema#comment> "Terms in this subtree are obsolete and shouldn't be used anymore." .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid1 <http://www.w3.org/2002/07/owl#members> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uni-rostock.de/comodi/comodi#Change> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uni-rostock.de/comodi/comodi#Intention> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uni-rostock.de/comodi/comodi#Reason> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uni-rostock.de/comodi/comodi#Target> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.uni-rostock.de/comodi/comodi#XmlEntity> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
