@@ -41,7 +41,7 @@ echo ontologyRevisionNumber=$TODAY >> $config
 ############
 echo "running widoco -- see https://github.com/dgarijo/Widoco"
 #[-ontFile file] or [-ontURI uri] [-outFolder folderName] [-confFile propertiesFile] or [-getOntologyMetadata] [-oops] [-rewriteAll] [-saveConfig configOutFile]
-java -jar widoco-0.0.1-jar-with-dependencies.jar -ontFile $ONTOFILE -confFile $config -outFolder $OUTDIR
+java -jar widoco-1.4.2-selfcompiled.jar -ontFile $ONTOFILE -confFile $config -outFolder $OUTDIR
 
 echo ''
 echo ''
@@ -80,10 +80,19 @@ cp $TEMPLATES/references.html $OUTDIR/sections/references-en.html
 
 # update acknoledgements
 echo "acknowledgements ..."
-head -n-6 $OUTDIR/index-en.html | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script><link rel="stylesheet" href="resources/css.css"/>%' > $tmp
-cat $TEMPLATES/acknowledgements.html >> $tmp
+cp $TEMPLATES/acknowledgements.html $OUTDIR/sections/acknowledgements-en.html
+cat $OUTDIR/index-en.html \
+| sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script><link rel="stylesheet" href="resources/css.css"/>%' \
+| sed 's%$("#references").load("sections/references-en.html");%$("#references").load("sections/references-en.html");\n$("#acknowledgements").load("sections/acknowledgements-en.html");%' \
+| perl -0777 -pe 's/<div id="acknowledgements">.*div>/<div id="acknowledgements"><\/div>/s' \
+> $tmp
+# head -n-6 $OUTDIR/index-en.html | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script><link rel="stylesheet" href="resources/css.css"/>%' > $tmp
+# cat $TEMPLATES/acknowledgements.html >> $tmp
 cp $tmp $OUTDIR/index-en.html
 # ln -s index-en.html $OUTDIR/index.html
+
+
+
 
 # copy js and css
 cp $TEMPLATES/js.js $OUTDIR/resources/js.js
@@ -93,41 +102,55 @@ cp $TEMPLATES/css.css $OUTDIR/resources/css.css
 # [ -f ../doc/whole-incl-links.svg ] && cp ../doc/whole-incl-links.svg $OUTDIR/whole.svg || 
 cp ../doc/whole.svg $OUTDIR/whole.svg
 
-# embedding files
-echo "embedding files"
-/bin/grep -B 1000 '<div id="abstract"></div>' $OUTDIR/index-en.html | /bin/grep -v ').load("sections/' | /bin/grep -v '>Revision:<' | /bin/grep -v 'property="schema:version">' | sed 's/<head>/<head><title>COMODI<\/title>/' |  sed 's/><\/img>/ \/>/' | head -n -1 > $OUTDIR/index.html
-echo '<div id="abstract">' >> $OUTDIR/index.html
-cat $OUTDIR/sections/abstract-en.html >> $OUTDIR/index.html
-echo '</div>
-<div id="toc"><h2>Table of contents</h2>
-<ul>
-<li><a href="#introduction">1. Introduction</a></li>
-<ul><li><a href="#namespacedeclarations">1.1 Namespace declarations</a></li></ul>
-<li><a href="#overview">2. COMODI: Overview</a></li>
-<li><a href="#description">3. COMODI: Description</a></li>
-<li><a href="#crossref">4. Cross reference for COMODI classes, properties and dataproperties</a></li>
-<ul>
-<li><a href="#classes">4.1 Classes</a></li>
-<li><a href="#objectproperties">4.2 Object Properties</a></li>
-        <li><a href="#dataproperties">4.3 Data Properties</a></li>
-</ul>
-<li><a href="#references">5. References</a></li>
-<li><a href="#acknowledgements">6. Acknowledgements</a></li>
-</ul>
-</div>' >> $OUTDIR/index.html
+# # embedding files
+# echo "embedding files"
+# /bin/grep -B 1000 '<div id="abstract"></div>' $OUTDIR/index-en.html | /bin/grep -v ').load("sections/' | /bin/grep -v '>Revision:<' | /bin/grep -v 'property="schema:version">' | sed 's/<head>/<head><title>COMODI<\/title>/' |  sed 's/><\/img>/ \/>/' | head -n -1 > $OUTDIR/index.html
+# echo '<div id="abstract">' >> $OUTDIR/index.html
+# cat $OUTDIR/sections/abstract-en.html >> $OUTDIR/index.html
+# echo '</div>
+# <div id="toc"><h2>Table of contents</h2>
+# <ul>
+# <li><a href="#introduction">1. Introduction</a></li>
+# <ul><li><a href="#namespacedeclarations">1.1 Namespace declarations</a></li></ul>
+# <li><a href="#overview">2. COMODI: Overview</a></li>
+# <li><a href="#description">3. COMODI: Description</a></li>
+# <li><a href="#crossref">4. Cross reference for COMODI classes, properties and dataproperties</a></li>
+# <ul>
+# <li><a href="#classes">4.1 Classes</a></li>
+# <li><a href="#objectproperties">4.2 Object Properties</a></li>
+#         <li><a href="#dataproperties">4.3 Data Properties</a></li>
+# </ul>
+# <li><a href="#references">5. References</a></li>
+# <li><a href="#acknowledgements">6. Acknowledgements</a></li>
+# </ul>
+# </div>' >> $OUTDIR/index.html
+# 
+# echo '<div id="introduction">' >> $OUTDIR/index.html
+# cat $OUTDIR/sections/introduction-en.html >> $OUTDIR/index.html
+# echo '</div><div id="overview">' >> $OUTDIR/index.html
+# cat $OUTDIR/sections/overview-en.html >> $OUTDIR/index.html
+# echo '</div><div id="description">' >> $OUTDIR/index.html
+# cat $OUTDIR/sections/description-en.html >> $OUTDIR/index.html
+# echo '</div><div id="crossref">' >> $OUTDIR/index.html
+# cat $OUTDIR/sections/crossref-en.html >> $OUTDIR/index.html
+# echo '</div><div id="references">' >> $OUTDIR/index.html
+# cat $OUTDIR/sections/references-en.html >> $OUTDIR/index.html
+# echo '</div>' >> $OUTDIR/index.html
+# /bin/grep -A 1000 '<div id="references"></div>' $OUTDIR/index-en.html | tail -n +2 >> $OUTDIR/index.html
+# echo '<div id="feedback"><a href="https://github.com/SemsProject/COMODI/wiki/Please-Send-Comments" title="Please send feedback"></a></div>' >> $OUTDIR/index.html
+# echo '</div></body></html>' >> $OUTDIR/index.html
 
-echo '<div id="introduction">' >> $OUTDIR/index.html
-cat $OUTDIR/sections/introduction-en.html >> $OUTDIR/index.html
-echo '</div><div id="overview">' >> $OUTDIR/index.html
-cat $OUTDIR/sections/overview-en.html >> $OUTDIR/index.html
-echo '</div><div id="description">' >> $OUTDIR/index.html
-cat $OUTDIR/sections/description-en.html >> $OUTDIR/index.html
-echo '</div><div id="crossref">' >> $OUTDIR/index.html
-cat $OUTDIR/sections/crossref-en.html >> $OUTDIR/index.html
-echo '</div><div id="references">' >> $OUTDIR/index.html
-cat $OUTDIR/sections/references-en.html >> $OUTDIR/index.html
-echo '</div>' >> $OUTDIR/index.html
-/bin/grep -A 1000 '<div id="references"></div>' $OUTDIR/index-en.html | tail -n +2 >> $OUTDIR/index.html
+cat $OUTDIR/index-en.html \
+| sed 's%\[CITEAS\]%Martin Scharm, Dagmar Waltemath, Pedro Mendes, and Olaf Wolkenhauer (2016): <strong>COMODI: an ontology to characterise differences in versions of computational models in biology.</strong> <em>Journal of Biomedical Semantics</em> 2016; 7:46; <a href="https://dx.doi.org/10.1186/s13326-016-0080-2">https://dx.doi.org/10.1186/s13326-016-0080-2</a>%' \
+| sed 's%\(<a [^>]*>\)<img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a>%[\1RDF/XML</a>] \&mdash; %' \
+| sed 's%\(<a [^>]*>\)<img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a>%[\1N-Triples</a>] \&mdash; %' \
+| sed 's%\(<a [^>]*>\)<img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a>%[\1TTL</a>] \&mdash; [<a href="comodi.owl" target="_blank">OWL</a>]%' \
+| sed 's%<img src \?="https://img.shields.io/badge/License-Creative[^>]*>%Creative Commons Attribution_ShareAlike 4.0 International License%' \
+| sed 's%<img src \?="https://img.shields.io/badge/DOI-10.1186/s13326-016-0080-2-blue.svg" alt="10.1186/s13326-016-0080-2" />%10.1186/s13326-016-0080-2%' \
+> $OUTDIR/index.html
+
+
+cp $OUTDIR/index.html $OUTDIR/index-en.html
 
 
 # linking
