@@ -128,6 +128,11 @@ echo '</div><div id="references">' >> $OUTDIR/index.html
 cat $OUTDIR/sections/references-en.html >> $OUTDIR/index.html
 echo '</div>' >> $OUTDIR/index.html
 /bin/grep -A 1000 '<div id="references"></div>' $OUTDIR/index-en.html | tail -n +2 >> $OUTDIR/index.html
+echo '<div id="feedback"><a href="https://github.com/SemsProject/COMODI/wiki/Please-Send-Comments" title="Please send feedback"></a></div>' >> $OUTDIR/index.html
+echo '</div></body></html>' >> $OUTDIR/index.html
+
+
+cp $OUTDIR/index.html $OUTDIR/index-en.html
 
 
 # linking
