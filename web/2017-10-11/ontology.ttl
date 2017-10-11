@@ -1,0 +1,546 @@
+@prefix : <http://purl.uni-rostock.de/comodi/comodi#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.uni-rostock.de/comodi/comodi> .
+
+<http://purl.uni-rostock.de/comodi/comodi> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.uni-rostock.de/comodi/comodi#affects
+:affects rdf:type owl:ObjectProperty ;
+         rdfs:domain :Change ;
+         rdfs:range :Target .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#appliesTo
+:appliesTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Change ;
+           rdfs:range :XmlEntity .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#hasIntention
+:hasIntention rdf:type owl:ObjectProperty ;
+              rdfs:domain :Change ;
+              rdfs:range :Intention .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#hasReason
+:hasReason rdf:type owl:ObjectProperty ;
+           rdfs:domain :Change ;
+           rdfs:range :Reason .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#wasTriggeredBy
+:wasTriggeredBy rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain :Change ;
+                rdfs:range :Change .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.uni-rostock.de/comodi/comodi#hadValue
+:hadValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :XmlEntity .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#receivedValue
+:receivedValue rdf:type owl:DatatypeProperty ;
+               rdfs:domain :XmlEntity .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.uni-rostock.de/comodi/comodi#AnnotationEncoding
+:AnnotationEncoding rdf:type owl:Class ;
+                    rdfs:subClassOf :ModelEncoding ;
+                    rdfs:comment "An annotation scheme encodes the structure of semantic annotations attached to the model or to the model entities."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Attribution
+:Attribution rdf:type owl:Class ;
+             rdfs:subClassOf :TextualDescription ;
+             rdfs:comment "Attribution is textual description to thank and appreciated e.g. certain persons or institutions."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Change
+:Change rdf:type owl:Class ;
+        rdfs:comment "A Change characterises how the description of a particular entity in a model differs from the description of that entity in another model or model version."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ChangedSpecification
+:ChangedSpecification rdf:type owl:Class ;
+                      rdfs:subClassOf :Reason ;
+                      rdfs:comment """Models are changed when the encoding standard is updated. In that case, the comodi:Reason of a change is a comodi:ChangedSpecification. 
+
+Example:
+The upgrade from SBML Level 2 to SBML Level 3 resulted in many changes in SBML models, which were necessary due to the comodi:ChangedSpecification."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ComponentDefinition
+:ComponentDefinition rdf:type owl:Class ;
+                     rdfs:subClassOf :MathematicalModelDefinition ;
+                     rdfs:comment "A ComponentDefinition describes a small functional unit of the system."^^xsd:string ;
+                     rdfs:seeAlso "https://www.cellml.org/specifications/cellml_1.1/#sec_structure_component_element"^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Contributor
+:Contributor rdf:type owl:Class ;
+             rdfs:subClassOf :Person ;
+             rdfs:comment "A Contributor is an annotation about a human being, who participated in the development of the model."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Correction
+:Correction rdf:type owl:Class ;
+            rdfs:subClassOf :Intention ;
+            rdfs:comment "A Correction resolves an error in a model."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#CreationDate
+:CreationDate rdf:type owl:Class ;
+              rdfs:subClassOf :Date ;
+              rdfs:comment "The CreationDate refers to the date and time when a model or a model entity was created."^^xsd:string ;
+              rdfs:isDefinedBy xsd:dateTime .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Creator
+:Creator rdf:type owl:Class ;
+         rdfs:subClassOf :Contributor ;
+         rdfs:comment "A Creator is an annotation about a human being, who was involved in the initial development of the model or its representaiton."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Date
+:Date rdf:type owl:Class ;
+      rdfs:subClassOf :ModelAnnotation ;
+      rdfs:isDefinedBy xsd:dateTime .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Deletion
+:Deletion rdf:type owl:Class ;
+          rdfs:subClassOf :Change ;
+          rdfs:comment """A Deletion removes a component from the model.
+
+Example: 
+A comodi:Change may delete a cellml:component from the network."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Elaboration
+:Elaboration rdf:type owl:Class ;
+             rdfs:subClassOf :Intention ;
+             rdfs:comment """An Elaboration adds more detail to the model. 
+
+Example:
+A new version of a model may provide a zoom into the model or certain structures therein, or it may provide more details on particular structures inside the model."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#EntityIdentifier
+:EntityIdentifier rdf:type owl:Class ;
+                  rdfs:subClassOf :XmlAttribute .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#EntityName
+:EntityName rdf:type owl:Class ;
+            rdfs:subClassOf :XmlAttribute .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#EventDefinition
+:EventDefinition rdf:type owl:Class ;
+                 rdfs:subClassOf :MathematicalModelDefinition ;
+                 rdfs:comment """An EventDefinition describes events that occur in the system. 
+
+Example:
+Events are usually triggered by \"something\". They may have a delay and they typically have an effect on the system's dynamics."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Expansion
+:Expansion rdf:type owl:Class ;
+           rdfs:subClassOf :Intention ;
+           rdfs:comment """An Expansion adds new entities to the model in order to cover a significantly larger network, or to enlarge the domain of the model.
+
+Example:
+A model describing the Interphase of the Cell Cycle may be expanded to cover the Cell division."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#FunctionDefinition
+:FunctionDefinition rdf:type owl:Class ;
+                    rdfs:subClassOf :MathematicalModelDefinition ;
+                    rdfs:comment "A FunctionDefinition describes a model-specific function that can be used in the model's maths."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#HierarchyDefinition
+:HierarchyDefinition rdf:type owl:Class ;
+                     rdfs:subClassOf :NetworkDefinition ;
+                     rdfs:comment """A HierarchyDefinition describes, for example, how to achieve an encapsulation or how to encode hierarchical relationships.
+
+Example:
+A modification of the component hierarchy of a CellML model comodi:affects the comodi:HierarchyDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#IdentifierEncoding
+:IdentifierEncoding rdf:type owl:Class ;
+                    rdfs:subClassOf :ModelEncoding ;
+                    rdfs:comment """An IdentifierEncoding specifies the structure of identifiers. That includes the encoding of links to external resources and links to entities in the model document. 
+
+
+Example: 
+SBML used different identifier schemes in the past, including identifiers.org (http://identifiers.org/obo.go/GO:0000278) and MIRIAM URNs (urn:miriam:obo.go:GO%3A0000278)."""^^xsd:string ;
+                    rdfs:seeAlso <https://www.cellml.org/specifications/cellml_1.1/#sec_fundamentals_identifiers> .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Insertion
+:Insertion rdf:type owl:Class ;
+           rdfs:subClassOf :Change ;
+           rdfs:comment """An Insertion adds a new component to the model.
+
+Example:
+For the reason of a comodi:Extension, we may insert a new sbml:parameter in the XML code."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Intention
+:Intention rdf:type owl:Class ;
+           rdfs:comment "An Intention specifies the aim of a change, particularly with respect to consequences in the future."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#KineticsDefinition
+:KineticsDefinition rdf:type owl:Class ;
+                    rdfs:subClassOf :MathematicalModelDefinition ;
+                    rdfs:comment """A KineticsDefinition describes a kinetic law.
+
+
+Example:
+The sbml:kineticLaw specifies the rate law of a reaction. A change in the kineticLaw comodi:affects the comodi:KineticsDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#KnowledgeGain
+:KnowledgeGain rdf:type owl:Class ;
+               rdfs:subClassOf :Reason ;
+               rdfs:comment "A KnowledgeGain is the process of acquiring new knowledge about the model, or the modeled system."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#MathematicalModelDefinition
+:MathematicalModelDefinition rdf:type owl:Class ;
+                             rdfs:subClassOf :ModelDefinition ;
+                             rdfs:comment "A MathematicalModelDefinition defines structural parts of the model that affect the dynamics of the system."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Merge
+:Merge rdf:type owl:Class ;
+       rdfs:subClassOf :Expansion ;
+       rdfs:comment "A Merge is the result of a combination, blend or unification of different models into a new model."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#MetaIdEncoding
+:MetaIdEncoding rdf:type owl:Class ;
+                rdfs:subClassOf :IdentifierEncoding ;
+                rdfs:comment "A MetaIdEncoding specifies the structure of meta-ids, that is global identifiers in the model that can be used to refer to model parts."^^xsd:string ;
+                rdfs:seeAlso <https://www.cellml.org/specifications/cellml_1.1/#sec_fundamentals_identifiers> .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#MismatchWithPublication
+:MismatchWithPublication rdf:type owl:Class ;
+                         rdfs:subClassOf :Reason ;
+                         rdfs:comment "A MismatchWithPublication reflects that a discrepancy between the model and the corresponding publication was discovered."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelAnnotation
+:ModelAnnotation rdf:type owl:Class ;
+                 rdfs:subClassOf :Target ;
+                 rdfs:comment """A ModelAnnotation provides meta-data about the model and its parts. 
+Popular annotations include RDF blocks, dc:terms and other controlled vocabularies."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelBehaviour
+:ModelBehaviour rdf:type owl:Class ;
+                rdfs:subClassOf :Target ;
+                rdfs:isDefinedBy <http://identifiers.org/teddy/TEDDY_0000000> .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelCuration
+:ModelCuration rdf:type owl:Class ;
+               rdfs:subClassOf :Reason ;
+               rdfs:comment "ModelCuration is the process of analysing the model itself and its correspondence to the publication. (https://www.ebi.ac.uk/biomodels-main/curationtips)"^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelDefinition
+:ModelDefinition rdf:type owl:Class ;
+                 rdfs:subClassOf :Target ;
+                 rdfs:comment """A ModelDefinition specifies a certain aspect of a model. A model typically contains a positive number of model definitions.
+
+Example:
+The sbml:kineticLaw specifies the rate law of a reaction. A change in the kineticLaw comodi:affects the comodi:ModelDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelEncoding
+:ModelEncoding rdf:type owl:Class ;
+               rdfs:subClassOf :Target ;
+               rdfs:comment """The ModelEncoding defines how the different parts of the model are to be encoded. 
+
+
+Example:
+In SBML or CellML, the comodi:ModelEncoding reflects the structure of the XML layer."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelId
+:ModelId rdf:type owl:Class ;
+         rdfs:subClassOf :EntityIdentifier .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelName
+:ModelName rdf:type owl:Class ;
+           rdfs:subClassOf :EntityName .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModelSetup
+:ModelSetup rdf:type owl:Class ;
+            rdfs:subClassOf :Target ;
+            rdfs:comment """The ModelSetup specifies necessary settings to initialise a model.
+
+Example:
+The amount of Glucose in an environment could be specified using a parameter. A change in the amount comodi:affects the comodi:ModelSetup, but does not affect the comodi:ModelDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ModificationDate
+:ModificationDate rdf:type owl:Class ;
+                  rdfs:subClassOf :Date ;
+                  rdfs:comment "A ModificationDate refers to the date and time when a model or a model entity was modified."^^xsd:string ;
+                  rdfs:isDefinedBy xsd:dateTime .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Move
+:Move rdf:type owl:Class ;
+      rdfs:subClassOf :Change ;
+      rdfs:comment "A move rearranges parts of the model."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#NetworkDefinition
+:NetworkDefinition rdf:type owl:Class ;
+                   rdfs:subClassOf :ModelDefinition ;
+                   rdfs:comment "A NetworkDefinition specifies the biological entities, how they are related to each other, and how they interact."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#OntologyReference
+:OntologyReference rdf:type owl:Class ;
+                   rdfs:subClassOf :ModelAnnotation ;
+                   rdfs:comment """An OntologyReference refers to a a term in a third-party resource, using a URI. 
+
+Example: 
+An example of an ontology reference is \"http://identifiers.org/obo.go/GO:0000278\"."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ParameterSetup
+:ParameterSetup rdf:type owl:Class ;
+                rdfs:subClassOf :ModelSetup ;
+                rdfs:comment """The ParameterSetup describes the value and units of a parameter in a model. 
+
+
+Example:
+Parameters can be used to define the current environment of a model, such as the temperature. If the value of a parameter changes it comodi:affects the comodi:ParameterDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ParticipantDefinition
+:ParticipantDefinition rdf:type owl:Class ;
+                       rdfs:subClassOf :ReactionNetworkDefinition ;
+                       rdfs:comment """A ParticipantDefinition describes the participants in the network. 
+
+Example: 
+A comodi:Change of an sbml:Species used in an sbml:reaction targets the comodi:ParticipantDefinition.
+A comodi:Change in a comodi:ParticipantDefinition indicates that the role or definition of the biological entity have changed."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#PermutationOfEntities
+:PermutationOfEntities rdf:type owl:Class ;
+                       rdfs:subClassOf :Move ;
+                       rdfs:comment """A PermutationOfEntities changes the order of model parts sharing the same parent node in the XML document (shuffling siblings).
+
+
+Example: 
+The import/export from different software tools may change the order of the sbml:species in the sbml:listOfSpecies. This shuffling is reflected in a comodi:PermutationOfEntities."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :ModelAnnotation ;
+        rdfs:comment "A Person is an annotaion about a human being that, for example, contributed to the development of the model in some way."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#PortDefinition
+:PortDefinition rdf:type owl:Class ;
+                rdfs:subClassOf :NetworkDefinition ;
+                rdfs:comment "A PortDefinition provides structure to input and output values and enables a convenient graphical representation of models. Ports are the basis for the definition of links in a network of models, representing the flow of information."^^xsd:string ;
+                rdfs:seeAlso "Bekey, George, and Boris Ja Kogan, eds. Modeling and Simulation: Theory and Practice: A Memorial Volume for Professor Walter J. Karplus (1927–2001). Springer Science & Business Media, 2012."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ReactionDefinition
+:ReactionDefinition rdf:type owl:Class ;
+                    rdfs:subClassOf :ReactionNetworkDefinition ;
+                    rdfs:comment """A ReactionDefinition describes a particular reaction taking place in the model. 
+
+
+Example:
+A comodi:Change in a comodi:ReactionDefinition indicates that the biological meaning of a reaction has changed."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ReactionNetworkDefinition
+:ReactionNetworkDefinition rdf:type owl:Class ;
+                           rdfs:subClassOf :NetworkDefinition ;
+                           rdfs:comment "A ReactioNetworkDefinition describes the structure of the network underlying a model."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Reason
+:Reason rdf:type owl:Class ;
+        rdfs:comment "The reason of a change focuses on the cause of a change."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#ReversibilityDefinition
+:ReversibilityDefinition rdf:type owl:Class ;
+                         rdfs:subClassOf :ReactionDefinition ;
+                         rdfs:comment "A ReversibilityDefinition describes the nature of the reaction, identifying it as reversible or irreversible."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#RuleDefinition
+:RuleDefinition rdf:type owl:Class ;
+                rdfs:subClassOf :MathematicalModelDefinition ;
+                rdfs:comment "A RuleDefinition specifies the values of the variables in a model, and the dynamic behaviors of those variables."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Simplification
+:Simplification rdf:type owl:Class ;
+                rdfs:subClassOf :Intention ;
+                rdfs:comment "A Simplification decreases the level of complexity by which the model or its entities are described."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#SpeciesSetup
+:SpeciesSetup rdf:type owl:Class ;
+              rdfs:subClassOf :ModelSetup ;
+              rdfs:comment """The SpeciesSetup defines a (biological) entity in the model. 
+
+
+Example:
+Changes in the value of the initial concentration comodi:affects the corresponding comodi:SpeciesDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Target
+:Target rdf:type owl:Class ;
+        rdfs:comment """The Target identifies the location of a comodi:Change, and characterises its nature. It thus defines where the comodi:Change takes affect. 
+
+Example:
+A comodi:Change may affect the comodi:Annotation of a cellml:component. 
+A comodi:Change may also affect the comodi:UnitDefinition of an sbml:Species."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#TextualDescription
+:TextualDescription rdf:type owl:Class ;
+                    rdfs:subClassOf :ModelAnnotation ;
+                    rdfs:comment """The TextualDescription of a model is a human-readable explanation of the model. It can be surrounded by layout information, for example to present the textual description in a web browser.
+
+Example:
+One example for a textual description is the SBML <notes> element."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Trial
+:Trial rdf:type owl:Class ;
+       rdfs:subClassOf :Intention ;
+       rdfs:comment """A Trial is a change resulting from playing around with the model.
+
+Example: 
+Models may be examined to better understand their dynamic behaviour, or to test hypotheses. In these cases, the changes are the result of a comodi:Trial."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Typo
+:Typo rdf:type owl:Class ;
+      rdfs:subClassOf :Reason ;
+      rdfs:comment "A Typo is a misspelling, e.g. in the description or name of a model or a model entity."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#UnitDefinition
+:UnitDefinition rdf:type owl:Class ;
+                rdfs:subClassOf :MathematicalModelDefinition ;
+                rdfs:comment "A UnitDefinition specifies a unit."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#Update
+:Update rdf:type owl:Class ;
+        rdfs:subClassOf :Change ;
+        rdfs:comment """An Update replaces a part of the model with another part. 
+
+Example: 
+A comodi:Change may require the exchange of a species definition with an updated one."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#VariableConnectionDefinition
+:VariableConnectionDefinition rdf:type owl:Class ;
+                              rdfs:subClassOf :NetworkDefinition ;
+                              rdfs:comment """A VariableConnectionDefinition describes how variables in a model are connected with each other.
+
+Example:
+A CellML model defines the participants of a biological system as variables. These variables can be part of different cellml:components. The comodi:VariableConnectionDefinition then defines how the variables are connected across the cellml:components. A change in these connections thus comodi:affects the comodi:VariableConnectionDefinition."""^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#VariableSetup
+:VariableSetup rdf:type owl:Class ;
+               rdfs:subClassOf :ModelSetup ;
+               rdfs:comment "The VariableSetup defines the values of variables in a model component."^^xsd:string ;
+               rdfs:seeAlso <https://www.cellml.org/specifications/cellml_1.1/#sec_structure_variable_element> .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#VcardEncoding
+:VcardEncoding rdf:type owl:Class ;
+               rdfs:subClassOf :AnnotationEncoding ;
+               rdfs:comment "The VcardEncoding specifies how to refer to other people/institutions in a machine readable format."^^xsd:string ;
+               rdfs:seeAlso <https://www.w3.org/TR/vcard-rdf/> .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#XmlAttribute
+:XmlAttribute rdf:type owl:Class ;
+              rdfs:subClassOf :XmlEntity ;
+              rdfs:comment "An XmlAttribute contains data related to a specific XML element. (http://www.w3schools.com/xml/xml_attributes.asp)"^^xsd:string ;
+              rdfs:seeAlso <http://www.w3schools.com/xml/xml_attributes.asp> .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#XmlEntity
+:XmlEntity rdf:type owl:Class ;
+           rdfs:comment "An XML entity is part of the instance of an XML-encoded model."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#XmlNode
+:XmlNode rdf:type owl:Class ;
+         rdfs:subClassOf :XmlEntity ;
+         rdfs:comment "An XmlNode represents a node in the XML tree."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#XmlText
+:XmlText rdf:type owl:Class ;
+         rdfs:subClassOf :XmlEntity ;
+         rdfs:comment "An XmlText represents the textual content of an element or attribute."^^xsd:string .
+
+
+###  http://purl.uni-rostock.de/comodi/comodi#_obsolete
+:_obsolete rdf:type owl:Class ;
+           rdfs:comment "Terms in this subtree are obsolete and shouldn't be used anymore."^^xsd:string .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Change
+                :Intention
+                :Reason
+                :Target
+                :XmlEntity
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
