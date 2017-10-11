@@ -84,7 +84,7 @@ cp $TEMPLATES/acknowledgements.html $OUTDIR/sections/acknowledgements-en.html
 cat $OUTDIR/index-en.html \
 | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script><link rel="stylesheet" href="resources/css.css"/>%' \
 | sed 's%$("#references").load("sections/references-en.html");%$("#references").load("sections/references-en.html");\n$("#acknowledgements").load("sections/acknowledgements-en.html");%' \
-| perl -0777 -pe 's/<div id="acknowledgements">.*div>/<div id="acknowledgements"><\/div>/s' \
+| perl -0777 -pe 's/<div id="acknowledgements">.*?div>/<div id="acknowledgements"><\/div>/s' \
 > $tmp
 # head -n-6 $OUTDIR/index-en.html | sed 's%<script src="resources/jquery.js"></script>%<script src="resources/jquery.js"></script><script src="resources/js.js"></script><link rel="stylesheet" href="resources/css.css"/>%' > $tmp
 # cat $TEMPLATES/acknowledgements.html >> $tmp
