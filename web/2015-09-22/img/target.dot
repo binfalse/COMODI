@@ -1,0 +1,66 @@
+digraph intro {
+rankdir=BT;
+edge [len=2];
+node [color="#005A9C",fontname = "DejaVu Sans Mono bold", style="bold"];
+
+top [color="#000000", style="filled,bold", fillcolor="#005A9C", fontcolor="#ffffff", label="Target"];
+
+
+
+"AnnotationDescription" -> top;
+
+"CreationDate" -> "Date" ;
+"ModificationDate" -> "Date" ;
+"Date" -> "AnnotationDescription";
+
+"OntologyLink" -> "AnnotationDescription";
+"TextualDescription" -> "AnnotationDescription";
+
+
+
+"Person" -> "AnnotationDescription";
+"Contributor" -> "Person";
+"Creator" -> "Contributor";
+"Attribution" -> "TextualDescription";
+
+
+
+"DocumentLayout" -> top;
+"FormatRelatedChange" -> "DocumentLayout";
+"PermutationOfEntities" -> "DocumentLayout";
+"ShiftingOfEntities" -> "DocumentLayout";
+"AnnotationScheme" -> "FormatRelatedChange";
+"IdentifiersScheme" -> "FormatRelatedChange";
+"MetaIdentifier" -> "FormatRelatedChange";
+"Specification" -> "FormatRelatedChange";
+"CellMLSpecification" -> "Specification";
+"SbmlSpecification" -> "Specification";
+"SbmlLevel" -> "SbmlSpecification";
+"SbmlVersion" -> "SbmlSpecification";
+"VcardScheme" -> "FormatRelatedChange";
+
+
+
+"EncodedSystem" -> top;
+"MathematicalModel" -> "EncodedSystem";
+"Network" -> "EncodedSystem";
+"ComponentDefinition" -> "MathematicalModel";
+"EventDefinition" -> "MathematicalModel";
+"FunctionDefinition" -> "MathematicalModel";
+"Kinetics" -> "MathematicalModel";
+"ParameterDefinition" -> "MathematicalModel";
+"Rules" -> "MathematicalModel";
+"SpeciesDefinition" -> "MathematicalModel";
+"UnitDefinition" -> "MathematicalModel";
+"VariableDefinition" -> "MathematicalModel";
+"ComponentHierarchy" -> "Network";
+"ReactionNetwork" -> "Network";
+"VariableConnections" -> "Network";
+"ReactionDefinition" -> "ReactionNetwork";
+
+
+
+
+
+
+}
