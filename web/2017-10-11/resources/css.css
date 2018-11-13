@@ -1,0 +1,48 @@
+em.rfc2119 {
+
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-style: normal;
+    color: #900;
+
+}
+
+
+/* -------- Feedback Button -------- */
+#feedback {
+        display: block;
+        position: fixed;
+        top: 450px;
+        left: 0;
+}
+#feedback a {
+        display: block;
+        width: 22px;
+        height: 81px;
+        padding: 5px;
+
+        background: no-repeat scroll center #EEE;
+        background-image: url('/feedback.png');
+        border: 2px dashed #555;
+        border-radius: 5px;
+        border-left: none;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+
+        text-decoration: none;
+        color: #005a9c;
+        font-weight: bold;
+        font-size: 1.2em;
+}
+#feedback a:hover {
+        background-color: #005a9c;
+        background-image: url('/feedback-highlight.png');
+        color: #EEE;
+}
+#feedback span {
+        max-width: 1ch;
+        display: block;
+        word-wrap: break-word;
+        line-height: 0.9em;
+}
+
